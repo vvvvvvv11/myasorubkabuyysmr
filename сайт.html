@@ -45,14 +45,10 @@
       display:flex; align-items:center; gap:0.5rem;
       position:relative;
     }
-    .cart-count { background:#ffcc00; color:black; border-radius:50%;
-      width:24px; height:24px; display:flex; align-items:center;
-      justify-content:center; font-size:0.9rem; position:absolute;
-      top:-10px; right:-10px; }
+    .cart-count { background:#ffcc00; color:black; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; position:absolute; top:-10px; right:-10px; }
 
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                  url('https://1.downloader.disk.yandex.ru/preview/f95a473bf16c9700812c84c18d7925774511a0818f0ad8383b7707011aaaa288/inf/WcbwbVtwf7eUItFSjokvS0wZ-k55BQ27XNWzHJJ37qAVf36VHCe4Dxv5UZtwSxAMx7nbOinax51bp1baEDBh0Q%3D%3D?uid=1733141611&filename=IMG_3013.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1733141611&tknv=v3&size=1905x998') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://1.downloader.disk.yandex.ru/preview/f95a473bf16c9700812c84c18d7925774511a0818f0ad8383b7707011aaaa288/inf/WcbwbVtwf7eUItFSjokvS0wZ-k55BQ27XNWzHJJ37qAVf36VHCe4Dxv5UZtwSxAMx7nbOinax51bp1baEDBh0Q%3D%3D?uid=1733141611&filename=IMG_3013.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1733141611&tknv=v3&size=1905x998') center/cover no-repeat;
       color:white; text-align:center; padding:8rem 1rem;
     }
     .hero h1 { font-size:2.8rem; margin-bottom:1rem; }
@@ -60,15 +56,10 @@
 
     .container { max-width:1200px; margin:0 auto; padding:2rem 1rem; }
 
-    .products {
-      display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
-      gap:2rem;
-    }
+    .products { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:2rem; }
     .product-card {
       background:var(--card-bg); border-radius:16px; overflow:hidden;
-      box-shadow:0 4px 15px var(--shadow);
-      transition: all 0.3s ease;
-      position:relative;
+      box-shadow:0 4px 15px var(--shadow); transition: all 0.3s ease; position:relative;
     }
     .product-card:hover { transform: scale(1.03); box-shadow:0 10px 25px var(--shadow); }
     .hit-ribbon {
@@ -76,32 +67,21 @@
       padding:0.4rem 1.8rem; font-size:0.9rem; font-weight:bold;
       transform:rotate(-45deg); z-index:2; box-shadow:0 2px 5px rgba(0,0,0,0.3);
     }
-    .product-img {
-      width:100%; height:300px; object-fit:cover;
-    }
-    .product-info {
-      padding:1.5rem; text-align:left;
-    }
+    .product-img { width:100%; height:300px; object-fit:cover; }
+    .product-info { padding:1.5rem; text-align:left; }
     .product-info h3 { font-size:1.4rem; margin-bottom:0.5rem; }
     .weight { color:#666; font-size:0.9rem; margin-bottom:0.5rem; }
     .description { color:#777; font-size:0.95rem; margin-bottom:1rem; }
     .price { font-size:1.8rem; font-weight:bold; color:var(--accent); margin-bottom:1rem; }
 
-    .quantity-block {
-      display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:1rem;
-    }
+    .quantity-block { display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:1rem; }
     .quantity-btn {
       width:36px; height:36px; background:#eee; border:none; border-radius:50%;
       cursor:pointer; font-size:1.4rem; display:flex; align-items:center; justify-content:center;
     }
-    .quantity-input {
-      width:70px; text-align:center; font-size:1.2rem; padding:0.5rem; border:1px solid #ccc; border-radius:8px;
-    }
+    .quantity-input { width:70px; text-align:center; font-size:1.2rem; padding:0.5rem; border:1px solid #ccc; border-radius:8px; }
 
-    .btn-add {
-      background:var(--accent); color:white; border:none; width:100%;
-      padding:1rem; border-radius:12px; cursor:pointer; font-size:1.1rem;
-    }
+    .btn-add { background:var(--accent); color:white; border:none; width:100%; padding:1rem; border-radius:12px; cursor:pointer; font-size:1.1rem; }
     .btn-add:hover { background:#a00000; }
 
     .mobile-cart-btn {
@@ -117,75 +97,37 @@
       z-index:99; cursor:pointer;
     }
 
-    .reviews {
-      background:var(--card-bg); padding:3rem 1rem; margin:4rem auto; max-width:1200px; border-radius:16px; box-shadow:0 4px 15px var(--shadow);
-    }
-    .reviews h2 { text-align:center; margin-bottom:2rem; color:var(--accent); font-size:2rem; }
-    .review-grid {
-      display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:2rem;
-    }
-    .review-card {
-      background:#f8f8f8; padding:1.5rem; border-radius:12px; text-align:center;
-    }
-    [data-theme="dark"] .review-card { background:#2a2a2a; }
-    .stars { color:#ffd700; font-size:1.4rem; margin-bottom:0.8rem; }
-    .review-text { font-style:italic; margin-bottom:1rem; line-height:1.5; }
-    .review-name { font-weight:bold; }
-
-    footer {
-      background:var(--card-bg); padding:2rem; text-align:center; margin-top:4rem; box-shadow:0 -2px 10px var(--shadow);
-    }
+    footer { background:var(--card-bg); padding:2rem; text-align:center; margin-top:4rem; box-shadow:0 -2px 10px var(--shadow); }
     footer p { margin:0.8rem 0; font-size:1rem; }
 
-    #cart-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8);
-      align-items:center; justify-content:center; z-index:200; padding:1rem; }
-    .cart-content {
-      background:var(--card-bg); width:100%; max-width:800px; border-radius:20px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.3); max-height:90vh; overflow-y:auto; padding:1.5rem;
-    }
-    .cart-item {
-      display:flex; align-items:center; gap:1rem; padding:1.5rem 1rem;
-      border-bottom:1px solid #eee;
-    }
+    #cart-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); align-items:center; justify-content:center; z-index:200; padding:1rem; }
+    .cart-content { background:var(--card-bg); width:100%; max-width:800px; border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.3); max-height:90vh; overflow-y:auto; padding:1.5rem; }
+    .cart-item { display:flex; align-items:center; gap:1rem; padding:1.5rem 1rem; border-bottom:1px solid #eee; }
     .cart-item img { width:100px; height:100px; object-fit:cover; border-radius:12px; }
     .cart-item-info { flex:1; }
     .quantity-controls { display:flex; align-items:center; gap:0.5rem; }
     .quantity-btn { width:36px; height:36px; background:#eee; border:none; border-radius:50%; cursor:pointer; font-size:1.2rem; }
-    .cart-total { font-size:2rem; font-weight:bold; color:var(--accent); text-align:center; padding:1.5rem; background:#f9f9f9; border-radius:12px; margin:1rem; }
 
+    .cart-summary { font-size:1.3rem; text-align:right; padding:1rem 0; }
+    .cart-summary strong { font-size:1.6rem; color:var(--accent); }
     .delivery-info { text-align:center; padding:1rem; background:#fff3e6; border-radius:12px; margin:1rem 0; font-size:1.1rem; }
 
     .order-form { display:grid; gap:1rem; }
-    .order-form input, .order-form textarea, .order-form select {
-      padding:1rem; border:1px solid #ccc; border-radius:8px; font-size:1rem;
-    }
-    #yoomoney-form { display:none; padding:1.5rem; background:#f0f0f0; border-radius:12px; text-align:center; margin:1rem 0; }
+    .order-form input, .order-form textarea, .order-form select { padding:1rem; border:1px solid #ccc; border-radius:8px; font-size:1rem; }
 
     #map-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:300; align-items:center; justify-content:center; }
     #map-container { width:90%; height:80vh; background:white; border-radius:20px; overflow:hidden; box-shadow:0 10px 40px rgba(0,0,0,0.3); }
     #map { width:100%; height:100%; }
 
     #order-success-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:400; align-items:center; justify-content:center; }
-    .success-content {
-      background:var(--card-bg); padding:3rem; border-radius:20px; text-align:center; max-width:500px; box-shadow:0 10px 40px rgba(0,0,0,0.3);
-    }
+    .success-content { background:var(--card-bg); padding:3rem; border-radius:20px; text-align:center; max-width:500px; box-shadow:0 10px 40px rgba(0,0,0,0.3); }
 
     #payment-success-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:300; align-items:center; justify-content:center; }
-
-    #review-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:500; align-items:center; justify-content:center; }
-    .review-content {
-      background:var(--card-bg); padding:3rem; border-radius:20px; text-align:center; max-width:500px; width:90%; box-shadow:0 10px 40px rgba(0,0,0,0.3);
-    }
-    .stars-input { font-size:2.5rem; cursor:pointer; margin:1rem 0; }
-    .stars-input span { transition:0.2s; }
-    .stars-input span:hover, .stars-input span.selected { color:#ffd700; }
-    #review-text { width:100%; padding:1rem; border:1px solid #ccc; border-radius:8px; min-height:120px; margin:1rem 0; }
 
     @media (max-width:768px) {
       .mobile-cart-btn { display:flex; }
       .hero { padding:6rem 1rem; }
       .hero h1 { font-size:2.4rem; }
-      .hero p { font-size:1.3rem; }
       .products { grid-template-columns:1fr 1fr; }
       .product-img { height:250px; }
     }
@@ -220,15 +162,9 @@
   <div class="products" id="products"></div>
 </div>
 
-<div class="container reviews">
-  <h2>Отзывы наших клиентов</h2>
-  <div class="review-grid" id="reviewGrid"></div>
-</div>
-
 <footer>
   <p><strong>Мясорубка</strong> — натуральные мясные деликатесы в Самаре</p>
   <p>Telegram: <a href="https://t.me/myasorubka63" style="color:var(--accent); text-decoration:none;">@myasorubka63</a></p>
-  <p>Доставка от 30 минут • Минимальный заказ 1000 ₽ • Бесплатно от 2000 ₽</p>
 </footer>
 
 <div class="mobile-cart-btn" onclick="openCart()">🛒</div>
@@ -238,8 +174,14 @@
   <div class="cart-content">
     <h2 style="text-align:center; padding:1.5rem; border-bottom:2px solid #eee;">Ваша корзина</h2>
     <div id="cartItems"></div>
+
     <div class="delivery-info" id="deliveryInfo"></div>
-    <div class="cart-total">Итого: <span id="cartTotal">0 ₽</span></div>
+
+    <div class="cart-summary">
+      Сумма товаров: <span id="goodsSum">0 ₽</span><br>
+      Доставка: <span id="deliverySum">150 ₽</span><br>
+      <strong>Итого: <span id="cartTotal">0 ₽</span></strong>
+    </div>
 
     <form class="order-form" id="orderForm">
       <input type="text" placeholder="Ваше имя" required>
@@ -257,32 +199,7 @@
       <button type="submit" style="width:100%; padding:1.2rem; background:#8B0000; color:white; border:none; border-radius:12px; font-size:1.3rem; margin-top:1rem;">Оформить заказ</button>
     </form>
 
-    <div id="yoomoney-form">
-      <p style="font-size:1.2rem; margin-bottom:1rem;"><strong>Оплата через ЮMoney</strong></p>
-      <p style="margin-bottom:1.5rem;">Сумма к оплате: <strong id="yoomoney-total-display">0 ₽</strong></p>
-
-      <form method="POST" action="https://yoomoney.ru/quickpay/confirm" target="_blank">
-        <input type="hidden" name="receiver" value="4100119441681698">
-        <input type="hidden" name="quickpay-form" value="shop">
-        <input type="hidden" name="targets" value="Оплата заказа мясных деликатесов">
-        <input type="hidden" name="sum" id="yoomoney-sum" value="">
-        <input type="hidden" name="label" value="Заказ с сайта Мясорубка">
-        <input type="hidden" name="successURL" value="https://твой-сайт.vercel.app/?paid=true">
-
-        <label style="display:block; margin:1rem 0; font-size:1rem;">
-          <input type="radio" name="paymentType" value="AC" checked> Банковской картой (Visa, Mastercard, Мир)
-        </label>
-        <label style="display:block; margin:1rem 0; font-size:1rem;">
-          <input type="radio" name="paymentType" value="PC"> Из кошелька ЮMoney
-        </label>
-
-        <button type="submit" style="width:100%; padding:1.3rem; background:#8B0000; color:white; border:none; border-radius:12px; font-size:1.3rem; font-weight:bold;">
-          Перейти к оплате
-        </button>
-      </form>
-    </div>
-
-    <button style="width:100%; margin:1rem; padding:1rem; background:#ccc; border:none; border-radius:12px;" onclick="closeCart()">Закрыть</button>
+    <button style="width:100%; margin:1rem 0; padding:1rem; background:#ccc; border:none; border-radius:12px;" onclick="closeCart()">Закрыть</button>
   </div>
 </div>
 
@@ -312,57 +229,49 @@
   </div>
 </div>
 
-<div id="review-modal">
-  <div class="review-content">
-    <h2>Оставить отзыв</h2>
-    <p style="margin-bottom:1rem;">Заказ №<span id="review-order-number"></span></p>
-    <p>Оцените наш сервис:</p>
-    <div class="stars-input" id="starsInput">
-      <span data-value="1">☆</span>
-      <span data-value="2">☆</span>
-      <span data-value="3">☆</span>
-      <span data-value="4">☆</span>
-      <span data-value="5">☆</span>
-    </div>
-    <textarea id="review-text" placeholder="Ваш отзыв (опционально)"></textarea>
-    <button style="padding:1rem 2rem; background:#8B0000; color:white; border:none; border-radius:12px; margin-top:1rem; cursor:pointer;" onclick="submitReview()">Отправить отзыв</button>
-    <button style="padding:1rem 2rem; background:#ccc; color:black; border:none; border-radius:12px; margin-top:1rem; margin-left:1rem; cursor:pointer;" onclick="document.getElementById('review-modal').style.display='none'">Отмена</button>
-  </div>
-</div>
+<form id="autoYooForm" method="POST" action="https://yoomoney.ru/quickpay/confirm" target="_blank" style="display:none;">
+  <input type="hidden" name="receiver" value="4100119441681698">
+  <input type="hidden" name="quickpay-form" value="shop">
+  <input type="hidden" name="targets" value="Оплата заказа мясных деликатесов">
+  <input type="hidden" name="sum" id="yooSum" value="">
+  <input type="hidden" name="label" value="Заказ с сайта Мясорубка">
+  <input type="hidden" name="successURL" value="https://твой-сайт.vercel.app/?paid=true">
+  <input type="hidden" name="paymentType" id="yooPaymentType" value="AC">
+</form>
 
 <script>
   const products = [
-    { id:1, name:"Шейка свиная пряная", weight:"100 г", desc:"Сочная, ароматная шейка с правильным балансом специй", price:138, img:"https://sun9-33.userapi.com/s/v1/ig2/MMK9uOSsh6jW0SohrdBk2MFL2pwAp0EZATorWtM3BX7tfRXtahZuUJ2r1YbOdHTyw7aiEU9sAja768JTw5EuP5Lp.jpg?quality=95&as=32x38,48x57,72x85,108x127,160x189,240x283,360x424,480x566,540x637,640x755,720x849,1080x1274,1280x1509,1440x1698,2171x2560&from=bu&u=RMz9IMcvUfbVN442_tFhs9BFbAxP5Ud2XOmyeyQz8W8&cs=540x0" },
-    { id:2, name:"Ножка цыпленка копчёная", weight:"100 г", desc:"Самая вкусная и сочная часть тушки", price:89, img:"https://sun9-52.userapi.com/s/v1/ig2/KCyZy7EsKS7VSlaxEawOYiQRNpGk4Oh4e_fXcr-jTtQ6izOWexmIYe1YslFGRMDNWBs3Jr7iICY7BnI3zUNEs6qw.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=awMYMiivqgavq_IResOgRNzj1n7gxzd5NGqI01xX3p0&cs=540x0" },
-    { id:3, name:"Перепел целый копчёный", weight:"1 шт", desc:"Готовая копчёная птица премиум-класса", price:350, img:"https://sun9-47.userapi.com/s/v1/ig2/QkocCq-Xz8AioCnGUwymW69xcG0RiecmxchIblpd_oWfvmaBYmU6Yz2wos0R4CsI8j-61xHsksC6kDMb4chvouIy.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,2560x1920&from=bu&u=68pEt5VqOsGeJ5vctwRVMTEDydPA4f7sOJLLEfUofIU&cs=1080x0" },
-    { id:4, name:"Орех из индейки с клюквой", weight:"100 г", desc:"Нежное бедро индейки с вяленой клюквой", price:145, img:"https://sun9-42.userapi.com/s/v1/ig2/CP2_vP7XKT3fvKSh56rTrG-hKf6a4O7c6FuJyYJO7S-pmvt3qkw6DP2zhTet6oXjjxboGT0sUg978_Bs8Tqv4e-c.jpg?quality=95&as=32x45,48x68,72x102,108x153,160x227,240x341,360x511,480x682,540x767,640x909,720x1022,1080x1533,1280x1817,1440x2045,1803x2560&from=bu&u=PvmwbWztinE0Pqc_tag79q_owU2K7pZlPWyLwAJpzPw&cs=540x0" },
-    { id:5, name:"Дуэт в беконе", weight:"100 г", desc:"Свиная вырезка + куриное филе в хрустящем беконе", price:135, img:"https://sun9-80.userapi.com/s/v1/ig2/C_c0FYAF4uhKcNEg1Ya5K1bChVbz3Pwaaztjr3EyDmbAjb3a7w_YXC2VT4bj6KklBVDr3pz2Nd_D71Y6IxtT1-Bu.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=U8JGKfalq3vQl3J3Dm7IbLrnknYBVS32gFnBsMc8mzk&cs=540x0" },
-    { id:6, name:"Рулет Панчетта", weight:"100 г", desc:"Итальянский бекон из свиной грудинки", price:105, img:"https://sun9-78.userapi.com/s/v1/ig2/ZxX1qh16D0EsfV0CHPHjOaArr0fXfsaWRciRNOm9s72zxp02tAQOIn5IDOy2F0nkPwn0WuQuDtjHVZsj9TM27HmM.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=EicW6j8guDdoWYjx_sIqEBeqAKT5BDXePq5iHoYmXBw&cs=540x0" },
-    { id:7, name:"Куриная грудка сырокопченая", weight:"100 г", desc:"Очень вкусный мясной деликатес, имеет яркий сочный вкус и аппетитный аромат пряностей и копчения.", price:120, img:"https://sun9-21.userapi.com/s/v1/ig2/XhN8JnwC5CpMbU5Mma19YbXTRYV1WlG7odAO_qpU9phTDGjaUg-kx5fwCxopIEwhsyZfqi6VLvnuvaqL2k_xEXkp.jpg?quality=95&as=32x45,48x68,72x102,108x153,160x226,240x339,360x509,480x679,540x764,640x905,720x1018,1080x1528,1280x1810,1440x2037,1810x2560&from=bu&u=hPmM8-mltV5YRLA6igmsJGoXLFeefocvEb8PuikeWtE&cs=540x0" },
-    { id:8, name:"Вырезка свиная варено-копченая.", weight:"100 г", desc:"Нежная варено-копченая свиная вырезка приготовлена с добавлением чеснока, имбиря и ароматных специй.", price:106, img:"https://sun9-54.userapi.com/s/v1/ig2/fEiWk-OrclsKLmQ1eGXk4nqLlb8WLEpsJ36jslwQ5XFqo8-xUp0vefeq8aICh4PaD-FeUXovQ7UMS_EbgicxLTnN.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=tVWa9Mb7wi3P_nlAqawxcjl319-2Wsb36tKzbPOb-S8&cs=540x0" },
-    { id:9, name:"Джерки", weight:"100 г", desc:"Джерки из свинины - пожалуй, одна из лучших закусок в мире.", price:300, img:"https://sun9-6.userapi.com/s/v1/ig2/xj8JtnKcUrpTbfb0zh3yb1ude5AGy7yKTJK0Rzjft_RCwsx_UIYoEEkCOEabaUzWeG06ioubg79dEOdnH1uoZwBB.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=ShA4DhVJoWkIej-02SLyIPahDJRwflhWzsvlsLjR0A0&cs=540x0" },
-    { id:10, name:"Пивчики", weight:"100 г", desc:"Пивчики подкопченые - вкусная закуска давно по достоинству оценена как любителями пенного, так и теми, кто просто любит вкусно и сытно перекуснуть.", price:200, img:"https://sun9-76.userapi.com/s/v1/ig2/TvfhWOYT0RacWgoUbAB4NvnrP4rkm1ZsoQ7cFvfpmUVPzmFR77__lrLu9xrqBi3JnacjylPD9cS7k-OOJRyB-LF1.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=VkMK1WdWqhMIxsk3UdOqRfm_VJp_o57QeeY6XITpAYs&cs=540x0" },
-    { id:11, name:"Грудинка варено-копченая", weight:"100 г", desc:"Грудинка варено-копченая - одна из классических закусок, мясное лакомство приготовленное двумя способами, варкой и копчением.", price:98, img:"https://sun9-81.userapi.com/s/v1/ig2/jxQ7YaJJgHKQ8ds6ICzXHVxmZydCeavGnaPc4-9CGz1tXrND-M61mbi4u8MzqTxs1Mrb93lS14hYSqgjfNOY2KmA.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=FZMnHHe0q2WecBXk8rIamFFfW6owFO8VTJxGwafH5mI&cs=540x0" },
-    { id:12, name:"Ребра свиные", weight:"100 г", desc:"Ребра свиные горячего копчения - один из деликатесов с ароматным и очень вкусным мясом.", price:98, img:"https://sun9-68.userapi.com/s/v1/ig2/yOIOF-NMPwXtKlTBwDgQKYW6-WYM-gZvzBNGwGCby9QQLJQzfVLOwZ8DBPMLzji3rlM1VgCyoRODZRXaVkIbl6eM.jpg?quality=95&as=32x42,48x63,72x95,108x143,160x212,240x317,360x476,480x635,540x714,640x846,720x952,1080x1428,1280x1693,1440x1904,1936x2560&from=bu&u=XoBCHQnsjvExcVTFGXccNtPT8LMf0ltljyYvJfST5-U&cs=540x0" },
-    { id:13, name:"Краковская колбаса", weight:"100 г", desc:"Краковская колбаса - в составе отборная свинина, высококачественная говядина.", price:122, img:"https://sun9-55.userapi.com/s/v1/ig2/yN8sa5dqPdXeMzCl_7WE1kUFA5w-Jxp-PQsJV3OWLyHfmslofI007_R87qbCj-tgaaLCrkQADj0PNLwo9-3745Ah.jpg?quality=95&as=32x36,48x54,72x81,108x121,160x179,240x269,360x403,480x538,540x605,640x717,720x806,1080x1209,1280x1433,1440x1613,2286x2560&from=bu&u=ZWZwlsROrfhlmcz7FW-xQzK6lmgkkgs1fYlvJbpx0ro&cs=540x0" },
+    { id:1, name:"Шейка свиная пряная", weight:"Продаётся поштучно, 1 шт. (400-500 г.)", desc:"Сочная, ароматная шейка с правильным балансом специй", price:138, img:"https://sun9-33.userapi.com/s/v1/ig2/MMK9uOSsh6jW0SohrdBk2MFL2pwAp0EZATorWtM3BX7tfRXtahZuUJ2r1YbOdHTyw7aiEU9sAja768JTw5EuP5Lp.jpg?quality=95&as=32x38,48x57,72x85,108x127,160x189,240x283,360x424,480x566,540x637,640x755,720x849,1080x1274,1280x1509,1440x1698,2171x2560&from=bu&u=RMz9IMcvUfbVN442_tFhs9BFbAxP5Ud2XOmyeyQz8W8&cs=540x0" },
+    { id:2, name:"Ножка цыпленка копчёная", weight:"Продаётся поштучно, 1 шт. (200-400 г.)", desc:"Самая вкусная и сочная часть тушки", price:89, img:"https://sun9-52.userapi.com/s/v1/ig2/KCyZy7EsKS7VSlaxEawOYiQRNpGk4Oh4e_fXcr-jTtQ6izOWexmIYe1YslFGRMDNWBs3Jr7iICY7BnI3zUNEs6qw.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=awMYMiivqgavq_IResOgRNzj1n7gxzd5NGqI01xX3p0&cs=540x0" },
+    { id:3, name:"Перепел целый копчёный", weight:"Цена за 1 шт", desc:"Готовая копчёная птица премиум-класса", price:350, img:"https://sun9-47.userapi.com/s/v1/ig2/QkocCq-Xz8AioCnGUwymW69xcG0RiecmxchIblpd_oWfvmaBYmU6Yz2wos0R4CsI8j-61xHsksC6kDMb4chvouIy.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,2560x1920&from=bu&u=68pEt5VqOsGeJ5vctwRVMTEDydPA4f7sOJLLEfUofIU&cs=1080x0" },
+    { id:4, name:"Орех из индейки с клюквой", weight:"Продаётся поштучно, 1 шт. (400-500 г.)", desc:"Нежное бедро индейки с вяленой клюквой", price:145, img:"https://sun9-42.userapi.com/s/v1/ig2/CP2_vP7XKT3fvKSh56rTrG-hKf6a4O7c6FuJyYJO7S-pmvt3qkw6DP2zhTet6oXjjxboGT0sUg978_Bs8Tqv4e-c.jpg?quality=95&as=32x45,48x68,72x102,108x153,160x227,240x341,360x511,480x682,540x767,640x909,720x1022,1080x1533,1280x1817,1440x2045,1803x2560&from=bu&u=PvmwbWztinE0Pqc_tag79q_owU2K7pZlPWyLwAJpzPw&cs=540x0" },
+    { id:5, name:"Дуэт в беконе", weight:"Продается поштучно, 1 шт. (400-500 г)", desc:"Свиная вырезка + куриное филе в хрустящем беконе", price:135, img:"https://sun9-80.userapi.com/s/v1/ig2/C_c0FYAF4uhKcNEg1Ya5K1bChVbz3Pwaaztjr3EyDmbAjb3a7w_YXC2VT4bj6KklBVDr3pz2Nd_D71Y6IxtT1-Bu.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=U8JGKfalq3vQl3J3Dm7IbLrnknYBVS32gFnBsMc8mzk&cs=540x0" },
+    { id:6, name:"Рулет Панчетта", weight:"Продается поштучно, 1 шт. (400-500 г)", desc:"Итальянский бекон из свиной грудинки", price:105, img:"https://sun9-78.userapi.com/s/v1/ig2/ZxX1qh16D0EsfV0CHPHjOaArr0fXfsaWRciRNOm9s72zxp02tAQOIn5IDOy2F0nkPwn0WuQuDtjHVZsj9TM27HmM.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=EicW6j8guDdoWYjx_sIqEBeqAKT5BDXePq5iHoYmXBw&cs=540x0" },
+    { id:7, name:"Куриная грудка сырокопченая", weight:"Продается поштучно, 1 шт. (от 200 г)", desc:"Очень вкусный мясной деликатес, имеет яркий сочный вкус и аппетитный аромат пряностей и копчения.", price:120, img:"https://sun9-21.userapi.com/s/v1/ig2/XhN8JnwC5CpMbU5Mma19YbXTRYV1WlG7odAO_qpU9phTDGjaUg-kx5fwCxopIEwhsyZfqi6VLvnuvaqL2k_xEXkp.jpg?quality=95&as=32x45,48x68,72x102,108x153,160x226,240x339,360x509,480x679,540x764,640x905,720x1018,1080x1528,1280x1810,1440x2037,1810x2560&from=bu&u=hPmM8-mltV5YRLA6igmsJGoXLFeefocvEb8PuikeWtE&cs=540x0" },
+    { id:8, name:"Вырезка свиная варено-копченая.", weight:"Продается поштучно, 1 шт. (400-500 г)", desc:"Нежная варено-копченая свиная вырезка приготовлена с добавлением чеснока, имбиря и ароматных специй.", price:106, img:"https://sun9-54.userapi.com/s/v1/ig2/fEiWk-OrclsKLmQ1eGXk4nqLlb8WLEpsJ36jslwQ5XFqo8-xUp0vefeq8aICh4PaD-FeUXovQ7UMS_EbgicxLTnN.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=tVWa9Mb7wi3P_nlAqawxcjl319-2Wsb36tKzbPOb-S8&cs=540x0" },
+    { id:9, name:"Джерки", weight:"Продается поштучно, 1 шт. (100 г)", desc:"Джерки из свинины - пожалуй, одна из лучших закусок в мире.", price:300, img:"https://sun9-6.userapi.com/s/v1/ig2/xj8JtnKcUrpTbfb0zh3yb1ude5AGy7yKTJK0Rzjft_RCwsx_UIYoEEkCOEabaUzWeG06ioubg79dEOdnH1uoZwBB.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=ShA4DhVJoWkIej-02SLyIPahDJRwflhWzsvlsLjR0A0&cs=540x0" },
+    { id:10, name:"Пивчики", weight:"Продается поштучно, 1 шт. (100г)", desc:"Пивчики подкопченые - вкусная закуска давно по достоинству оценена как любителями пенного, так и теми, кто просто любит вкусно и сытно перекуснуть.", price:200, img:"https://sun9-76.userapi.com/s/v1/ig2/TvfhWOYT0RacWgoUbAB4NvnrP4rkm1ZsoQ7cFvfpmUVPzmFR77__lrLu9xrqBi3JnacjylPD9cS7k-OOJRyB-LF1.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=VkMK1WdWqhMIxsk3UdOqRfm_VJp_o57QeeY6XITpAYs&cs=540x0" },
+    { id:11, name:"Грудинка варено-копченая", weight:"Продается поштучно, 1 шт. (400-500 г)", desc:"Грудинка варено-копченая - одна из классических закусок, мясное лакомство приготовленное двумя способами, варкой и копчением.", price:98, img:"https://sun9-81.userapi.com/s/v1/ig2/jxQ7YaJJgHKQ8ds6ICzXHVxmZydCeavGnaPc4-9CGz1tXrND-M61mbi4u8MzqTxs1Mrb93lS14hYSqgjfNOY2KmA.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=FZMnHHe0q2WecBXk8rIamFFfW6owFO8VTJxGwafH5mI&cs=540x0" },
+    { id:12, name:"Ребра свиные", weight:"Продается поштучно, 1 шт. (300-500 г)", desc:"Ребра свиные горячего копчения - один из деликатесов с ароматным и очень вкусным мясом.", price:98, img:"https://sun9-68.userapi.com/s/v1/ig2/yOIOF-NMPwXtKlTBwDgQKYW6-WYM-gZvzBNGwGCby9QQLJQzfVLOwZ8DBPMLzji3rlM1VgCyoRODZRXaVkIbl6eM.jpg?quality=95&as=32x42,48x63,72x95,108x143,160x212,240x317,360x476,480x635,540x714,640x846,720x952,1080x1428,1280x1693,1440x1904,1936x2560&from=bu&u=XoBCHQnsjvExcVTFGXccNtPT8LMf0ltljyYvJfST5-U&cs=540x0" },
+    { id:13, name:"Краковская колбаса", weight:"Продается поштучно, 1 шт. (400-500 г)", desc:"Краковская колбаса - в составе отборная свинина, высококачественная говядина.", price:122, img:"https://sun9-55.userapi.com/s/v1/ig2/yN8sa5dqPdXeMzCl_7WE1kUFA5w-Jxp-PQsJV3OWLyHfmslofI007_R87qbCj-tgaaLCrkQADj0PNLwo9-3745Ah.jpg?quality=95&as=32x36,48x54,72x81,108x121,160x179,240x269,360x403,480x538,540x605,640x717,720x806,1080x1209,1280x1433,1440x1613,2286x2560&from=bu&u=ZWZwlsROrfhlmcz7FW-xQzK6lmgkkgs1fYlvJbpx0ro&cs=540x0" },
   ];
 
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   const MIN_ORDER = 1000;
-  const FREE_DELIVERY_FROM = 2000;
-  const DELIVERY_COST = 300;
+  const FREE_DELIVERY_FROM = 5555;
+  const DELIVERY_COST = 150;
 
   const BOT_TOKEN = '7857746746:AAGppBRxVA72xVEhXmvPYsWxoV3fDpvKdZY';
   const ADMIN_CHAT_ID = '7900316924';
 
-  // Тёмная тема
+  // Тема
   const themeToggle = document.getElementById('themeToggle');
   themeToggle.addEventListener('click', () => {
-    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    themeToggle.textContent = isDark ? '🌙' : '☀️';
   });
   if (localStorage.getItem('theme') === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
@@ -374,7 +283,6 @@
     document.getElementById('to-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
   });
 
-  // Рендер товаров
   function renderProducts() {
     const container = document.getElementById('products');
     container.innerHTML = '';
@@ -390,50 +298,37 @@
           <div class="weight">${p.weight}</div>
           <div class="description">${p.desc}</div>
           <div class="price">${p.price} ₽</div>
-
           <div class="quantity-block">
             <button class="quantity-btn" type="button">−</button>
             <input type="number" class="quantity-input" value="1" min="1">
             <button class="quantity-btn" type="button">+</button>
           </div>
-
           <button class="btn-add" type="button">В корзину</button>
         </div>
       `;
       container.appendChild(card);
 
-      const minusBtn = card.querySelector('.quantity-btn');
+      const minusBtn = card.querySelectorAll('.quantity-btn')[0];
       const plusBtn = card.querySelectorAll('.quantity-btn')[1];
       const input = card.querySelector('.quantity-input');
       const addBtn = card.querySelector('.btn-add');
 
-      minusBtn.addEventListener('click', () => {
-        if (parseInt(input.value) > 1) input.value = parseInt(input.value) - 1;
-      });
-
-      plusBtn.addEventListener('click', () => {
-        input.value = parseInt(input.value) + 1;
-      });
-
+      minusBtn.addEventListener('click', () => { if (input.value > 1) input.value--; });
+      plusBtn.addEventListener('click', () => { input.value = parseInt(input.value) + 1; });
       addBtn.addEventListener('click', () => {
-        const quantity = parseInt(input.value) || 1;
+        const qty = parseInt(input.value) || 1;
         const existing = cart.find(item => item.id === p.id);
-        if (existing) {
-          existing.quantity += quantity;
-        } else {
-          cart.push({ ...p, quantity: quantity });
-        }
+        if (existing) existing.quantity += qty;
+        else cart.push({ ...p, quantity: qty });
         saveCart();
         updateCartCount();
-        renderCartIfOpen();
-        alert(`${p.name} × ${quantity} добавлено в корзину!`);
+        if (document.getElementById('cart-modal').style.display === 'flex') renderCart();
+        alert(`${p.name} × ${qty} добавлено в корзину!`);
       });
     });
   }
 
-  function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
+  function saveCart() { localStorage.setItem('cart', JSON.stringify(cart)); }
 
   function updateCartCount() {
     const count = cart.reduce((s, i) => s + i.quantity, 0);
@@ -444,21 +339,26 @@
     const container = document.getElementById('cartItems');
     container.innerHTML = '';
     let totalGoods = 0;
+
     if (cart.length === 0) {
       container.innerHTML = '<p style="text-align:center; padding:3rem; color:#999;">Корзина пуста</p>';
+      document.getElementById('goodsSum').textContent = '0 ₽';
+      document.getElementById('deliverySum').textContent = '0 ₽';
       document.getElementById('cartTotal').textContent = '0 ₽';
       document.getElementById('deliveryInfo').innerHTML = '';
       return;
     }
+
     cart.forEach(item => {
-      totalGoods += item.price * item.quantity;
+      const itemTotal = item.price * item.quantity;
+      totalGoods += itemTotal;
       const div = document.createElement('div');
       div.className = 'cart-item';
       div.innerHTML = `
         <img src="${item.img}" alt="${item.name}">
         <div class="cart-item-info">
           <strong>${item.name}</strong><br>
-          ${item.weight} • ${item.price} ₽ × ${item.quantity} = ${item.price * item.quantity} ₽
+          ${item.weight} • ${item.price} ₽ × ${item.quantity} = ${itemTotal} ₽
         </div>
         <div class="quantity-controls">
           <button class="quantity-btn" onclick="changeQuantity(${item.id}, -1)">−</button>
@@ -471,15 +371,15 @@
     });
 
     const deliveryCost = totalGoods >= FREE_DELIVERY_FROM ? 0 : DELIVERY_COST;
-    const total = totalGoods + deliveryCost;
+    const grandTotal = totalGoods + deliveryCost;
 
-    document.getElementById('cartTotal').textContent = total + ' ₽';
+    document.getElementById('goodsSum').textContent = totalGoods + ' ₽';
+    document.getElementById('deliverySum').textContent = deliveryCost === 0 ? 'бесплатно' : deliveryCost + ' ₽';
+    document.getElementById('cartTotal').textContent = grandTotal + ' ₽';
 
-    const deliveryText = totalGoods >= FREE_DELIVERY_FROM 
+    document.getElementById('deliveryInfo').innerHTML = deliveryCost === 0 
       ? '<strong>Доставка бесплатно!</strong>' 
       : `Доставка: ${DELIVERY_COST} ₽ (бесплатно от ${FREE_DELIVERY_FROM} ₽)`;
-
-    document.getElementById('deliveryInfo').innerHTML = deliveryText;
   }
 
   function changeQuantity(id, delta) {
@@ -487,7 +387,11 @@
     if (item) {
       item.quantity += delta;
       if (item.quantity <= 0) removeFromCart(id);
-      else { saveCart(); updateCartCount(); renderCart(); }
+      else {
+        saveCart();
+        updateCartCount();
+        renderCart();
+      }
     }
   }
 
@@ -496,10 +400,6 @@
     saveCart();
     updateCartCount();
     renderCart();
-  }
-
-  function renderCartIfOpen() {
-    if (document.getElementById('cart-modal').style.display === 'flex') renderCart();
   }
 
   function openCart() {
@@ -511,12 +411,8 @@
     document.getElementById('cart-modal').style.display = 'none';
   }
 
-  document.getElementById('paymentSelect').addEventListener('change', function() {
-    document.getElementById('yoomoney-form').style.display = this.value === 'online' ? 'block' : 'none';
-  });
-
-  const phoneInput = document.getElementById('phone-input');
-  phoneInput.addEventListener('input', function (e) {
+  // Маска телефона
+  document.getElementById('phone-input').addEventListener('input', function(e) {
     let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
     if (!x[2] && x[1] !== '7') x[1] = '7';
     e.target.value = !x[2] ? '+7' : '+7 (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
@@ -527,12 +423,8 @@
     document.getElementById('map-modal').style.display = 'flex';
     if (!ymap) {
       ymaps.ready(() => {
-        ymap = new ymaps.Map("map", {
-          center: [53.2007, 50.1478],
-          zoom: 12
-        });
-
-        ymap.events.add('click', function (e) {
+        ymap = new ymaps.Map("map", { center: [53.2007, 50.1478], zoom: 12 });
+        ymap.events.add('click', e => {
           const coords = e.get('coords');
           ymaps.geocode(coords).then(res => {
             const first = res.geoObjects.get(0);
@@ -546,15 +438,14 @@
     }
   }
 
-  document.getElementById('map-modal').addEventListener('click', function(e) {
+  document.getElementById('map-modal').addEventListener('click', e => {
     if (e.target === this) this.style.display = 'none';
   });
 
-  // Заказ
   document.getElementById('orderForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const cleanedPhone = phoneInput.value.replace(/\D/g, '');
+    const cleanedPhone = document.getElementById('phone-input').value.replace(/\D/g, '');
     if (cleanedPhone.length !== 11) {
       alert('Введите корректный номер телефона (11 цифр)');
       return;
@@ -564,7 +455,7 @@
     cart.forEach(item => totalGoods += item.price * item.quantity);
 
     if (totalGoods < MIN_ORDER) {
-      alert(`Минимальная сумма заказа — ${MIN_ORDER} ₽`);
+      alert(`Минимальная сумма заказа — ${MIN_ORDER} ₽ (по товарам)\n\nСейчас: ${totalGoods} ₽`);
       return;
     }
 
@@ -576,7 +467,7 @@
     const orderData = {
       number: orderNumber,
       name: this[0].value,
-      phone: phoneInput.value,
+      phone: document.getElementById('phone-input').value,
       address: document.getElementById('address-input').value,
       comment: this[3].value || 'нет',
       total: total,
@@ -584,16 +475,9 @@
     };
 
     localStorage.setItem('lastOrder', JSON.stringify(orderData));
-
     sendOrderToAdmin(orderData);
 
-    const tgMessage = `Заказ №${orderNumber}%0A` +
-      `Имя: ${orderData.name}%0A` +
-      `Телефон: ${orderData.phone}%0A` +
-      `Адрес: ${encodeURIComponent(orderData.address)}%0A` +
-      `Комментарий: ${orderData.comment}%0A` +
-      `Сумма: ${total} ₽`;
-
+    const tgMessage = `Заказ №${orderNumber}%0AИмя: ${orderData.name}%0AТелефон: ${orderData.phone}%0AАдрес: ${encodeURIComponent(orderData.address)}%0AКомментарий: ${orderData.comment}%0AСумма: ${total} ₽`;
     const tgLink = `https://t.me/myasorubka63?text=${tgMessage}`;
 
     document.getElementById('success-number').textContent = orderNumber;
@@ -602,10 +486,11 @@
     document.getElementById('order-success-modal').style.display = 'flex';
 
     if (orderData.payment === 'online') {
-      document.getElementById('yoomoney-sum').value = total;
-      document.getElementById('yoomoney-total-display').textContent = total + ' ₽';
-      document.getElementById('yoomoney-form').style.display = 'block';
+      document.getElementById('yooSum').value = total;
+      document.getElementById('autoYooForm').submit();
     }
+
+    closeCart();
   });
 
   function sendOrderToAdmin(orderData) {
@@ -622,10 +507,8 @@
     saveCart();
     updateCartCount();
     localStorage.removeItem('lastOrder');
-    closeCart();
   }
 
-  // Оплата
   window.addEventListener('load', function() {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('paid') === 'true') {
@@ -638,77 +521,12 @@
       }
       history.replaceState({}, '', window.location.pathname);
     }
+
+    renderProducts();
+    updateCartCount();
   });
 
-  // Отзывы
-  let reviews = JSON.parse(localStorage.getItem('siteReviews')) || [
-    { stars: 5, text: "Заказывал шейку и джерки — всё супер свежее и вкусное! Доставили за 40 минут.", name: "Алексей" },
-    { stars: 5, text: "Лучшие копчёности в Самаре! Особенно понравился рулет Панчетта.", name: "Марина" },
-    { stars: 5, text: "Постоянный клиент. Качество на высоте, цены адекватные.", name: "Дмитрий" },
-    { stars: 4, text: "Всё вкусно, но доставка могла бы быть быстрее в час пик.", name: "Ольга" },
-    { stars: 5, text: "Рекомендую перепелов — бомба! Спасибо за качество.", name: "Сергей" },
-  ];
-
-  function renderReviews() {
-    const container = document.getElementById('reviewGrid');
-    container.innerHTML = '';
-    reviews.forEach(r => {
-      const card = document.createElement('div');
-      card.className = 'review-card';
-      card.innerHTML = `
-        <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
-        <p class="review-text">${r.text || 'Без комментария'}</p>
-        <p class="review-name">${r.name || 'Аноним'}</p>
-      `;
-      container.appendChild(card);
-    });
-  }
-
-  let currentRating = 0;
-  document.querySelectorAll('#starsInput span').forEach(star => {
-    star.addEventListener('click', () => {
-      currentRating = star.dataset.value;
-      document.querySelectorAll('#starsInput span').forEach((s, i) => {
-        s.classList.toggle('selected', i < currentRating);
-        s.textContent = i < currentRating ? '★' : '☆';
-      });
-    });
-  });
-
-  function submitReview() {
-    if (currentRating === 0) {
-      alert('Пожалуйста, поставьте оценку');
-      return;
-    }
-    const text = document.getElementById('review-text').value.trim();
-    const orderNum = document.getElementById('review-order-number').textContent;
-
-    const newReview = {
-      stars: parseInt(currentRating),
-      text: text,
-      name: `Клиент заказа №${orderNum}`
-    };
-
-    reviews.unshift(newReview);
-    localStorage.setItem('siteReviews', JSON.stringify(reviews));
-    renderReviews();
-
-    alert('Спасибо за ваш отзыв! Он появится на сайте.');
-    document.getElementById('review-modal').style.display = 'none';
-  }
-
-  window.addEventListener('load', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const orderNum = urlParams.get('leave_review');
-    if (orderNum) {
-      document.getElementById('review-order-number').textContent = orderNum;
-      document.getElementById('review-modal').style.display = 'flex';
-      history.replaceState({}, '', window.location.pathname);
-    }
-
-    renderReviews();
-  });
-
+  // Инициализация
   renderProducts();
   updateCartCount();
 </script>
