@@ -1,24 +1,46 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Доставка натуральных мясных деликатесов в Самаре — копчёности, рулеты, джерки от 30 минут. Минимальный заказ 1000 ₽."/>
+  <meta property="og:title" content="Мясорубка — Самарские мясные деликатесы с доставкой"/>
+  <meta property="og:description" content="Натуральные копчёности ручной работы с доставкой по Самаре"/>
+  <meta property="og:image" content="https://1.downloader.disk.yandex.ru/preview/f95a473bf16c9700812c84c18d7925774511a0818f0ad8383b7707011aaaa288/inf/WcbwbVtwf7eUItFSjokvS0wZ-k55BQ27XNWzHJJ37qAVf36VHCe4Dxv5UZtwSxAMx7nbOinax51bp1baEDBh0Q%3D%3D?uid=1733141611&filename=IMG_3013.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1733141611&tknv=v3&size=1905x998"/>
   <title>Мясорубка | Самарские мясные деликатесы</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #333;
+      --card-bg: white;
+      --accent: #8B0000;
+      --shadow: rgba(0,0,0,0.1);
+      --ribbon-bg: #ff0000;
+    }
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --accent: #a00000;
+      --shadow: rgba(0,0,0,0.4);
+      --ribbon-bg: #c00000;
+    }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Arial', sans-serif; background:#f9f9f9; color:#333; }
+    body { font-family: 'Arial', sans-serif; background:var(--bg); color:var(--text); transition:0.3s; }
     header {
-      background:#ffffff;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      background:var(--card-bg);
+      box-shadow:0 2px 10px var(--shadow);
       position:sticky; top:0; z-index:100;
     }
     nav {
       max-width:1200px; margin:0 auto; padding:1rem;
       display:flex; justify-content:space-between; align-items:center;
     }
-    .logo { font-size:1.8rem; font-weight:bold; color:#8B0000; }
+    .logo { font-size:1.8rem; font-weight:bold; color:var(--accent); }
+    .theme-toggle { background:none; border:none; font-size:1.6rem; cursor:pointer; }
     .cart-btn {
-      background:#8B0000; color:white; padding:0.8rem 1.5rem;
+      background:var(--accent); color:white; padding:0.8rem 1.5rem;
       border-radius:30px; cursor:pointer; font-weight:bold;
       display:flex; align-items:center; gap:0.5rem;
       position:relative;
@@ -31,29 +53,31 @@
     .hero {
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                   url('https://1.downloader.disk.yandex.ru/preview/f95a473bf16c9700812c84c18d7925774511a0818f0ad8383b7707011aaaa288/inf/WcbwbVtwf7eUItFSjokvS0wZ-k55BQ27XNWzHJJ37qAVf36VHCe4Dxv5UZtwSxAMx7nbOinax51bp1baEDBh0Q%3D%3D?uid=1733141611&filename=IMG_3013.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1733141611&tknv=v3&size=1905x998') center/cover no-repeat;
-      color:white; text-align:center; padding:10rem 1rem;
-      min-height: 600px;
+      color:white; text-align:center; padding:8rem 1rem;
     }
-    .hero h1 { font-size:3rem; margin-bottom:1rem; }
-    .hero p { font-size:1.5rem; }
+    .hero h1 { font-size:2.8rem; margin-bottom:1rem; }
+    .hero p { font-size:1.4rem; }
 
     .container { max-width:1200px; margin:0 auto; padding:2rem 1rem; }
 
     .products {
-      display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
       gap:2rem;
     }
     .product-card {
-      background:white; border-radius:16px; overflow:hidden;
-      box-shadow:0 4px 15px rgba(0,0,0,0.1);
+      background:var(--card-bg); border-radius:16px; overflow:hidden;
+      box-shadow:0 4px 15px var(--shadow);
       transition: all 0.3s ease;
+      position:relative;
     }
-    .product-card:hover { 
-      transform: scale(1.03); 
-      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    .product-card:hover { transform: scale(1.03); box-shadow:0 10px 25px var(--shadow); }
+    .hit-ribbon {
+      position:absolute; top:10px; left:-8px; background:var(--ribbon-bg); color:white;
+      padding:0.4rem 1.8rem; font-size:0.9rem; font-weight:bold;
+      transform:rotate(-45deg); z-index:2; box-shadow:0 2px 5px rgba(0,0,0,0.3);
     }
     .product-img {
-      width:100%; height:280px; object-fit:cover; background:#f0f0f0;
+      width:100%; height:300px; object-fit:cover;
     }
     .product-info {
       padding:1.5rem; text-align:left;
@@ -61,7 +85,7 @@
     .product-info h3 { font-size:1.4rem; margin-bottom:0.5rem; }
     .weight { color:#666; font-size:0.9rem; margin-bottom:0.5rem; }
     .description { color:#777; font-size:0.95rem; margin-bottom:1rem; }
-    .price { font-size:1.8rem; font-weight:bold; color:#8B0000; margin-bottom:1rem; }
+    .price { font-size:1.8rem; font-weight:bold; color:var(--accent); margin-bottom:1rem; }
 
     .quantity-block {
       display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:1rem;
@@ -75,16 +99,49 @@
     }
 
     .btn-add {
-      background:#8B0000; color:white; border:none; width:100%;
+      background:var(--accent); color:white; border:none; width:100%;
       padding:1rem; border-radius:12px; cursor:pointer; font-size:1.1rem;
     }
     .btn-add:hover { background:#a00000; }
 
+    .mobile-cart-btn {
+      position:fixed; bottom:20px; right:20px; background:var(--accent); color:white;
+      width:60px; height:60px; border-radius:50%; display:flex; align-items:center;
+      justify-content:center; font-size:1.8rem; box-shadow:0 4px 15px rgba(0,0,0,0.3);
+      z-index:99; cursor:pointer; display:none;
+    }
+    #to-top {
+      position:fixed; bottom:90px; right:20px; background:var(--accent); color:white;
+      width:50px; height:50px; border-radius:50%; display:none; align-items:center;
+      justify-content:center; font-size:1.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      z-index:99; cursor:pointer;
+    }
+
+    .reviews {
+      background:var(--card-bg); padding:3rem 1rem; margin:4rem auto; max-width:1200px; border-radius:16px; box-shadow:0 4px 15px var(--shadow);
+    }
+    .reviews h2 { text-align:center; margin-bottom:2rem; color:var(--accent); font-size:2rem; }
+    .review-grid {
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:2rem;
+    }
+    .review-card {
+      background:#f8f8f8; padding:1.5rem; border-radius:12px; text-align:center;
+    }
+    [data-theme="dark"] .review-card { background:#2a2a2a; }
+    .stars { color:#ffd700; font-size:1.4rem; margin-bottom:0.8rem; }
+    .review-text { font-style:italic; margin-bottom:1rem; line-height:1.5; }
+    .review-name { font-weight:bold; }
+
+    footer {
+      background:var(--card-bg); padding:2rem; text-align:center; margin-top:4rem; box-shadow:0 -2px 10px var(--shadow);
+    }
+    footer p { margin:0.8rem 0; font-size:1rem; }
+
     #cart-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8);
       align-items:center; justify-content:center; z-index:200; padding:1rem; }
     .cart-content {
-      background:white; width:100%; max-width:800px; border-radius:20px;
-      box-shadow:0 10px 40px rgba(0,0,0,0.3); max-height:90vh; overflow-y:auto;
+      background:var(--card-bg); width:100%; max-width:800px; border-radius:20px;
+      box-shadow:0 10px 40px rgba(0,0,0,0.3); max-height:90vh; overflow-y:auto; padding:1.5rem;
     }
     .cart-item {
       display:flex; align-items:center; gap:1rem; padding:1.5rem 1rem;
@@ -94,11 +151,11 @@
     .cart-item-info { flex:1; }
     .quantity-controls { display:flex; align-items:center; gap:0.5rem; }
     .quantity-btn { width:36px; height:36px; background:#eee; border:none; border-radius:50%; cursor:pointer; font-size:1.2rem; }
-    .cart-total { font-size:2rem; font-weight:bold; color:#8B0000; text-align:center; padding:1.5rem; background:#f9f9f9; border-radius:12px; margin:1rem; }
+    .cart-total { font-size:2rem; font-weight:bold; color:var(--accent); text-align:center; padding:1.5rem; background:#f9f9f9; border-radius:12px; margin:1rem; }
 
-    .delivery-info { text-align:center; padding:1rem; background:#fff3e6; border-radius:12px; margin:1rem; font-size:1.1rem; }
+    .delivery-info { text-align:center; padding:1rem; background:#fff3e6; border-radius:12px; margin:1rem 0; font-size:1.1rem; }
 
-    .order-form { padding:1.5rem; background:#f9f9f9; border-radius:12px; margin:1rem; display:grid; gap:1rem; }
+    .order-form { display:grid; gap:1rem; }
     .order-form input, .order-form textarea, .order-form select {
       padding:1rem; border:1px solid #ccc; border-radius:8px; font-size:1rem;
     }
@@ -108,31 +165,33 @@
     #map-container { width:90%; height:80vh; background:white; border-radius:20px; overflow:hidden; box-shadow:0 10px 40px rgba(0,0,0,0.3); }
     #map { width:100%; height:100%; }
 
-    /* Окно подтверждения заказа */
     #order-success-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:400; align-items:center; justify-content:center; }
     .success-content {
-      background:white; padding:3rem; border-radius:20px; text-align:center; max-width:500px; box-shadow:0 10px 40px rgba(0,0,0,0.3);
+      background:var(--card-bg); padding:3rem; border-radius:20px; text-align:center; max-width:500px; box-shadow:0 10px 40px rgba(0,0,0,0.3);
     }
-    .success-content h2 { color:#8B0000; margin-bottom:1rem; }
-    .success-content p { font-size:1.2rem; margin-bottom:2rem; }
 
-    #payment-success-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6);
-      align-items:center; justify-content:center; z-index:300; }
-    .success-content {
-      background:white; padding:3rem; border-radius:20px; text-align:center; box-shadow:0 10px 40px rgba(0,0,0,0.3);
+    #payment-success-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:300; align-items:center; justify-content:center; }
+
+    #review-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:500; align-items:center; justify-content:center; }
+    .review-content {
+      background:var(--card-bg); padding:3rem; border-radius:20px; text-align:center; max-width:500px; width:90%; box-shadow:0 10px 40px rgba(0,0,0,0.3);
     }
-    .success-content h2 { color:#8B0000; margin-bottom:1rem; }
-    .success-content p { font-size:1.2rem; margin-bottom:2rem; }
+    .stars-input { font-size:2.5rem; cursor:pointer; margin:1rem 0; }
+    .stars-input span { transition:0.2s; }
+    .stars-input span:hover, .stars-input span.selected { color:#ffd700; }
+    #review-text { width:100%; padding:1rem; border:1px solid #ccc; border-radius:8px; min-height:120px; margin:1rem 0; }
 
     @media (max-width:768px) {
-      .hero h1 { font-size:2.2rem; }
+      .mobile-cart-btn { display:flex; }
+      .hero { padding:6rem 1rem; }
+      .hero h1 { font-size:2.4rem; }
+      .hero p { font-size:1.3rem; }
       .products { grid-template-columns:1fr 1fr; }
-      .cart-item { flex-direction:column; text-align:center; }
-      #map-container { height:70vh; }
+      .product-img { height:250px; }
     }
     @media (max-width:480px) {
       .products { grid-template-columns:1fr; }
-      .hero { padding:6rem 1rem; }
+      .hero h1 { font-size:2rem; }
     }
   </style>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=2eabc960-bce3-4302-949c-2850871ae7f6&lang=ru_RU" type="text/javascript"></script>
@@ -141,15 +200,18 @@
 
 <header>
   <nav>
-    <div class="logo">Мясорубка | Самарские мясные деликатесы</div>
-    <div class="cart-btn" onclick="openCart()">
-      <span>Корзина</span> <span class="cart-count" id="cartCount">0</span>
+    <div class="logo">Мясорубка</div>
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <div class="cart-btn" onclick="openCart()">
+        <span>Корзина</span> <span class="cart-count" id="cartCount">0</span>
+      </div>
     </div>
   </nav>
 </header>
 
 <section class="hero">
-  <h1></h1>
+  <h1>Самарские мясные деликатесы с доставкой</h1>
   <p></p>
 </section>
 
@@ -157,6 +219,20 @@
   <h2 style="text-align:center; margin:3rem 0;">Наше меню</h2>
   <div class="products" id="products"></div>
 </div>
+
+<div class="container reviews">
+  <h2>Отзывы наших клиентов</h2>
+  <div class="review-grid" id="reviewGrid"></div>
+</div>
+
+<footer>
+  <p><strong>Мясорубка</strong> — натуральные мясные деликатесы в Самаре</p>
+  <p>Telegram: <a href="https://t.me/myasorubka63" style="color:var(--accent); text-decoration:none;">@myasorubka63</a></p>
+  <p>Доставка от 30 минут • Минимальный заказ 1000 ₽ • Бесплатно от 2000 ₽</p>
+</footer>
+
+<div class="mobile-cart-btn" onclick="openCart()">🛒</div>
+<button id="to-top">↑</button>
 
 <div id="cart-modal">
   <div class="cart-content">
@@ -210,32 +286,47 @@
   </div>
 </div>
 
-<!-- Окно подтверждения заказа -->
 <div id="order-success-modal">
   <div class="success-content">
     <h2>Заказ №<span id="success-number"></span> оформлен!</h2>
     <p>Сумма: <strong><span id="success-total"></span> ₽</strong></p>
     <p>Мы получили ваш заказ.<br>Чтобы ускорить обработку — напишите нам в Telegram:</p>
     <a href="" id="tg-link" target="_blank" style="display:inline-block; padding:1.2rem 2.5rem; background:#0088cc; color:white; border-radius:12px; text-decoration:none; font-size:1.2rem; font-weight:bold; margin:1rem 0;">
-      Написать в Telegram 
+      Написать в Telegram @myasorubka63
     </a>
     <button style="padding:1rem 2rem; background:#ccc; border:none; border-radius:12px; cursor:pointer;" onclick="document.getElementById('order-success-modal').style.display='none'; clearCartAfterOrder();">Закрыть</button>
   </div>
 </div>
 
-<!-- Модальное окно карты -->
 <div id="map-modal">
   <div id="map-container">
     <div id="map"></div>
   </div>
 </div>
 
-<!-- Окно после оплаты -->
 <div id="payment-success-modal">
   <div class="success-content">
     <h2>Заказ успешно оплачен!</h2>
     <p>Спасибо за покупку! Мы свяжемся с вами в ближайшее время.</p>
     <button style="padding:1rem 2rem; background:#8B0000; color:white; border:none; border-radius:12px; font-size:1.2rem; cursor:pointer;" onclick="document.getElementById('payment-success-modal').style.display='none'; clearCartAfterOrder();">Закрыть</button>
+  </div>
+</div>
+
+<div id="review-modal">
+  <div class="review-content">
+    <h2>Оставить отзыв</h2>
+    <p style="margin-bottom:1rem;">Заказ №<span id="review-order-number"></span></p>
+    <p>Оцените наш сервис:</p>
+    <div class="stars-input" id="starsInput">
+      <span data-value="1">☆</span>
+      <span data-value="2">☆</span>
+      <span data-value="3">☆</span>
+      <span data-value="4">☆</span>
+      <span data-value="5">☆</span>
+    </div>
+    <textarea id="review-text" placeholder="Ваш отзыв (опционально)"></textarea>
+    <button style="padding:1rem 2rem; background:#8B0000; color:white; border:none; border-radius:12px; margin-top:1rem; cursor:pointer;" onclick="submitReview()">Отправить отзыв</button>
+    <button style="padding:1rem 2rem; background:#ccc; color:black; border:none; border-radius:12px; margin-top:1rem; margin-left:1rem; cursor:pointer;" onclick="document.getElementById('review-modal').style.display='none'">Отмена</button>
   </div>
 </div>
 
@@ -265,14 +356,35 @@
   const BOT_TOKEN = '7857746746:AAGppBRxVA72xVEhXmvPYsWxoV3fDpvKdZY';
   const ADMIN_CHAT_ID = '7900316924';
 
+  // Тёмная тема
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+  });
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '☀️';
+  }
+
+  // Кнопка наверх
+  window.addEventListener('scroll', () => {
+    document.getElementById('to-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+  });
+
+  // Рендер товаров
   function renderProducts() {
     const container = document.getElementById('products');
     container.innerHTML = '';
-    products.forEach(p => {
+    products.forEach((p, i) => {
+      const isHit = i < 6;
       const card = document.createElement('div');
       card.className = 'product-card';
       card.innerHTML = `
-        <img class="product-img" src="${p.img}" alt="${p.name}">
+        ${isHit ? '<div class="hit-ribbon">Хит</div>' : ''}
+        <img class="product-img" src="${p.img}" alt="${p.name}" loading="lazy">
         <div class="product-info">
           <h3>${p.name}</h3>
           <div class="weight">${p.weight}</div>
@@ -386,6 +498,10 @@
     renderCart();
   }
 
+  function renderCartIfOpen() {
+    if (document.getElementById('cart-modal').style.display === 'flex') renderCart();
+  }
+
   function openCart() {
     renderCart();
     document.getElementById('cart-modal').style.display = 'flex';
@@ -434,6 +550,7 @@
     if (e.target === this) this.style.display = 'none';
   });
 
+  // Заказ
   document.getElementById('orderForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -468,10 +585,8 @@
 
     localStorage.setItem('lastOrder', JSON.stringify(orderData));
 
-    // Отправка тебе в бот
     sendOrderToAdmin(orderData);
 
-    // Подготовка ссылки для клиента
     const tgMessage = `Заказ №${orderNumber}%0A` +
       `Имя: ${orderData.name}%0A` +
       `Телефон: ${orderData.phone}%0A` +
@@ -486,7 +601,6 @@
     document.getElementById('tg-link').href = tgLink;
     document.getElementById('order-success-modal').style.display = 'flex';
 
-    // Если онлайн оплата
     if (orderData.payment === 'online') {
       document.getElementById('yoomoney-sum').value = total;
       document.getElementById('yoomoney-total-display').textContent = total + ' ₽';
@@ -511,6 +625,7 @@
     closeCart();
   }
 
+  // Оплата
   window.addEventListener('load', function() {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('paid') === 'true') {
@@ -523,6 +638,75 @@
       }
       history.replaceState({}, '', window.location.pathname);
     }
+  });
+
+  // Отзывы
+  let reviews = JSON.parse(localStorage.getItem('siteReviews')) || [
+    { stars: 5, text: "Заказывал шейку и джерки — всё супер свежее и вкусное! Доставили за 40 минут.", name: "Алексей" },
+    { stars: 5, text: "Лучшие копчёности в Самаре! Особенно понравился рулет Панчетта.", name: "Марина" },
+    { stars: 5, text: "Постоянный клиент. Качество на высоте, цены адекватные.", name: "Дмитрий" },
+    { stars: 4, text: "Всё вкусно, но доставка могла бы быть быстрее в час пик.", name: "Ольга" },
+    { stars: 5, text: "Рекомендую перепелов — бомба! Спасибо за качество.", name: "Сергей" },
+  ];
+
+  function renderReviews() {
+    const container = document.getElementById('reviewGrid');
+    container.innerHTML = '';
+    reviews.forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'review-card';
+      card.innerHTML = `
+        <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5 - r.stars)}</div>
+        <p class="review-text">${r.text || 'Без комментария'}</p>
+        <p class="review-name">${r.name || 'Аноним'}</p>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  let currentRating = 0;
+  document.querySelectorAll('#starsInput span').forEach(star => {
+    star.addEventListener('click', () => {
+      currentRating = star.dataset.value;
+      document.querySelectorAll('#starsInput span').forEach((s, i) => {
+        s.classList.toggle('selected', i < currentRating);
+        s.textContent = i < currentRating ? '★' : '☆';
+      });
+    });
+  });
+
+  function submitReview() {
+    if (currentRating === 0) {
+      alert('Пожалуйста, поставьте оценку');
+      return;
+    }
+    const text = document.getElementById('review-text').value.trim();
+    const orderNum = document.getElementById('review-order-number').textContent;
+
+    const newReview = {
+      stars: parseInt(currentRating),
+      text: text,
+      name: `Клиент заказа №${orderNum}`
+    };
+
+    reviews.unshift(newReview);
+    localStorage.setItem('siteReviews', JSON.stringify(reviews));
+    renderReviews();
+
+    alert('Спасибо за ваш отзыв! Он появится на сайте.');
+    document.getElementById('review-modal').style.display = 'none';
+  }
+
+  window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderNum = urlParams.get('leave_review');
+    if (orderNum) {
+      document.getElementById('review-order-number').textContent = orderNum;
+      document.getElementById('review-modal').style.display = 'flex';
+      history.replaceState({}, '', window.location.pathname);
+    }
+
+    renderReviews();
   });
 
   renderProducts();
