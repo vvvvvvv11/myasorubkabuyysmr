@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Доставка натуральных мясных деликатесов в Самаре — копчёности, рулеты, джерки от 30 минут. Минимальный заказ 1000 ₽."/>
+  <title>Мясорубка | Самарские мясные деликатесы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0d0b;
+      --bg2: #161410;
+      --card-bg: #1a1815;
+      --card-border: #2a2520;
+      --text: #e8ddd0;
+      --text-muted: #8a7d70;
+      --accent: #d4820a;
+      --accent2: #b86a00;
+      --accent-glow: rgba(212,130,10,0.25);
+      --smoke: rgba(255,255,255,0.03);
+      --red: #c0392b;
+      --green: #2a7a3a;
+      --new-badge: #1a6b3a;
+      --gift-badge: #7a3080;
+    }
+    [data-theme="light"] {
+      --bg: #f5f0ea;
+      --bg2: #ede5d8;
+      --card-bg: #fff9f3;
+      --card-border: #ddd0c0;
+      --text: #1a1510;
+      --text-muted: #7a6a58;
+      --accent: #b8670a;
+      --accent2: #9a5500;
+      --accent-glow: rgba(184,103,10,0.2);
+      --smoke: rgba(0,0,0,0.02);
+      --red: #a93226;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    /* ───── HEADER ───── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(14,13,11,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+    }
+    [data-theme="light"] header { background: rgba(245,240,234,0.92); }
+    nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      line-height: 1;
+      user-select: none;
+    }
+    .logo span {
+      color: var(--text);
+      opacity: 0.5;
+      font-weight: 400;
+      font-size: 0.8rem;
+      display: block;
+      letter-spacing: 0.2em;
+      margin-top: 2px;
+    }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover { border-color: var(--accent); }
+    .cart-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0 1.4rem;
+      height: 44px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex; align-items: center; gap: 0.6rem;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .cart-btn:hover { background: var(--accent2); }
+    .cart-btn:active { transform: scale(0.97); }
+    .cart-count {
+      background: #fff;
+      color: var(--accent2);
+      border-radius: 50%;
+      width: 22px; height: 22px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    /* ───── HERO ───── */
+    .hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(to top, rgba(14,13,11,1) 0%, rgba(14,13,11,0.7) 40%, rgba(14,13,11,0.3) 100%),
+        url('https://1.downloader.disk.yandex.ru/preview/f95a473bf16c9700812c84c18d7925774511a0818f0ad8383b7707011aaaa288/inf/WcbwbVtwf7eUItFSjokvS0wZ-k55BQ27XNWzHJJ37qAVf36VHCe4Dxv5UZtwSxAMx7nbOinax51bp1baEDBh0Q%3D%3D?uid=1733141611&filename=IMG_3013.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1733141611&tknv=v3&size=1905x998');
+      background-size: cover;
+      background-position: center 30%;
+    }
+    [data-theme="light"] .hero-bg {
+      background-image:
+        linear-gradient(to top, rgba(245,240,234,1) 0%, rgba(245,240,234,0.6) 40%, rgba(245,240,234,0.1) 100%),
+        url('https://1.downloader.disk.yandex.ru/preview/f95a473bf16c9700812c84c18d7925774511a0818f0ad8383b7707011aaaa288/inf/WcbwbVtwf7eUItFSjokvS0wZ-k55BQ27XNWzHJJ37qAVf36VHCe4Dxv5UZtwSxAMx7nbOinax51bp1baEDBh0Q%3D%3D?uid=1733141611&filename=IMG_3013.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1733141611&tknv=v3&size=1905x998');
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 1280px; width: 100%;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px; height: 2px;
+      background: var(--accent);
+    }
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+    .hero-badge {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 0.35rem 0.9rem;
+      border-radius: 2px;
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.06em;
+    }
+
+    /* ───── PRICE NOTICE BANNER ───── */
+    .price-notice {
+      background: linear-gradient(135deg, rgba(212,130,10,0.12), rgba(212,130,10,0.05));
+      border: 1px solid rgba(212,130,10,0.35);
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .price-notice-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .price-notice-text { font-size: 0.9rem; line-height: 1.5; color: var(--text); }
+    .price-notice-text strong { color: var(--accent); }
+
+    /* ───── CATEGORY TABS ───── */
+    .category-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .cat-tab {
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--card-border);
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: 3px;
+      cursor: pointer;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+    .cat-tab:hover { border-color: var(--accent); color: var(--accent); }
+    .cat-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* ───── SECTION TITLE ───── */
+    .section-header {
+      display: flex; align-items: baseline; gap: 1.5rem;
+      margin-bottom: 2rem; margin-top: 2.5rem;
+    }
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    .section-line { flex: 1; height: 1px; background: var(--card-border); }
+    .section-badge {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .badge-hit { background: var(--accent); color: #fff; }
+    .badge-new { background: var(--new-badge); color: #fff; }
+    .badge-gift { background: var(--gift-badge); color: #fff; }
+    .badge-cut { background: #3a3a1a; color: #c8c060; border: 1px solid #6a6a20; }
+
+    /* ───── CONTAINER ───── */
+    .container { max-width: 1280px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+    /* ───── PRODUCTS GRID ───── */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px var(--accent);
+    }
+
+    /* Ribbons */
+    .ribbon {
+      position: absolute; top: 14px; left: 14px;
+      padding: 0.25rem 0.7rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      border-radius: 2px; z-index: 2; color: #fff;
+    }
+    .ribbon-hit { background: var(--accent); }
+    .ribbon-new { background: var(--new-badge); }
+    .ribbon-gift { background: var(--gift-badge); }
+    .ribbon-cut { background: #5a5a10; color: #e8e060; }
+
+    .product-img-wrap {
+      position: relative; overflow: hidden; height: 260px;
+    }
+    .product-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease; display: block;
+    }
+    .product-card:hover .product-img { transform: scale(1.04); }
+    .product-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(14,13,11,0.7) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .product-info {
+      padding: 1.25rem 1.25rem 1.4rem;
+      display: flex; flex-direction: column; flex: 1;
+    }
+    .product-info h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 0.4rem; line-height: 1.2;
+    }
+    .weight {
+      color: var(--text-muted); font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    .description {
+      color: var(--text-muted); font-size: 0.88rem;
+      line-height: 1.55; margin-bottom: 1rem; flex: 1;
+    }
+    .product-bottom {
+      display: flex; align-items: center; gap: 0.75rem; margin-top: auto;
+    }
+    .price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--accent); white-space: nowrap;
+    }
+    .price-note {
+      font-size: 0.72rem; color: var(--text-muted);
+      line-height: 1.3; margin-top: 2px;
+    }
+    .price-wrap { display: flex; flex-direction: column; }
+
+    .quantity-block {
+      display: flex; align-items: center;
+      background: var(--bg2);
+      border: 1px solid var(--card-border);
+      border-radius: 3px; overflow: hidden;
+    }
+    .quantity-btn {
+      width: 34px; height: 34px;
+      background: transparent; border: none;
+      color: var(--text); cursor: pointer;
+      font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s, color 0.15s;
+    }
+    .quantity-btn:hover { background: var(--accent); color: #fff; }
+    .quantity-input {
+      width: 42px; background: transparent; border: none;
+      border-left: 1px solid var(--card-border);
+      border-right: 1px solid var(--card-border);
+      color: var(--text); text-align: center;
+      font-size: 0.95rem; font-family: 'IBM Plex Sans', sans-serif;
+      height: 34px; outline: none;
+      -moz-appearance: textfield;
+    }
+    .quantity-input::-webkit-inner-spin-button,
+    .quantity-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+    .btn-add {
+      flex: 1; background: var(--accent); color: #fff;
+      border: none; height: 34px; border-radius: 3px;
+      cursor: pointer;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-add:hover { background: var(--accent2); }
+    .btn-add:active { transform: scale(0.97); }
+
+    /* ───── CATEGORY SECTION GROUPS ───── */
+    .cat-section { margin-bottom: 1rem; }
+    .cat-section.hidden { display: none; }
+
+    /* ───── HOW TO ORDER STRIP ───── */
+    .how-strip {
+      background: var(--bg2);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      padding: 2rem 1.5rem;
+      margin: 0;
+    }
+    .how-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .how-step { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .how-icon { font-size: 2rem; }
+    .how-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .how-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
+    .how-arrow { font-size: 1.5rem; color: var(--accent); align-self: center; display: flex; align-items: center; }
+    @media (max-width: 600px) { .how-arrow { display: none; } }
+
+    /* ───── FOOTER ───── */
+    footer {
+      background: var(--bg2); border-top: 1px solid var(--card-border);
+      padding: 3rem 1.5rem; margin-top: 2rem;
+    }
+    .footer-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+    }
+    .footer-text { color: var(--text-muted); font-size: 0.9rem; }
+    .footer-tg {
+      color: var(--accent); text-decoration: none; font-weight: 500;
+      font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;
+      transition: opacity 0.2s;
+    }
+    .footer-tg:hover { opacity: 0.7; }
+
+    /* ───── MOBILE CART BTN ───── */
+    .mobile-cart-btn {
+      position: fixed; bottom: 24px; right: 24px;
+      background: var(--accent); color: white;
+      width: 58px; height: 58px; border-radius: 50%;
+      display: none; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      z-index: 99; cursor: pointer; border: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .mobile-cart-btn:hover { transform: scale(1.08); background: var(--accent2); }
+    #to-top {
+      position: fixed; bottom: 96px; right: 28px;
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      color: var(--text); width: 44px; height: 44px; border-radius: 50%;
+      display: none; align-items: center; justify-content: center;
+      font-size: 1.1rem; z-index: 99; cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    #to-top:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ───── MODAL BASE ───── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center;
+      z-index: 200; padding: 1rem;
+    }
+
+    /* ───── CART MODAL ───── */
+    #cart-modal {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center;
+      z-index: 200; padding: 1rem;
+    }
+    .cart-content {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      width: 100%; max-width: 820px; border-radius: 8px;
+      max-height: 90vh; overflow-y: auto;
+      scrollbar-width: thin; scrollbar-color: var(--card-border) transparent;
+    }
+    .cart-header {
+      padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--card-border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cart-header h2 {
+      font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .close-btn {
+      background: transparent; border: 1px solid var(--card-border);
+      color: var(--text-muted); width: 36px; height: 36px;
+      border-radius: 4px; cursor: pointer; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .close-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .cart-body { padding: 0 1.75rem; }
+    .cart-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.25rem 0; border-bottom: 1px solid var(--card-border);
+    }
+    .cart-item img {
+      width: 80px; height: 80px; object-fit: cover;
+      border-radius: 4px; border: 1px solid var(--card-border); flex-shrink: 0;
+    }
+    .cart-item-info { flex: 1; min-width: 0; }
+    .cart-item-info strong {
+      font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      display: block; margin-bottom: 0.25rem;
+    }
+    .cart-item-meta { font-size: 0.82rem; color: var(--text-muted); }
+    .quantity-controls { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
+    .qty-ctrl-btn {
+      width: 30px; height: 30px;
+      background: var(--bg2); border: 1px solid var(--card-border);
+      border-radius: 3px; color: var(--text); cursor: pointer; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+    .qty-ctrl-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .remove-btn {
+      background: transparent; border: none; color: var(--text-muted);
+      cursor: pointer; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.05em; transition: color 0.2s;
+      padding: 0.25rem 0.5rem; margin-left: 0.25rem;
+    }
+    .remove-btn:hover { color: var(--red); }
+    .delivery-info {
+      text-align: center; padding: 0.9rem;
+      background: var(--smoke); border: 1px solid var(--card-border);
+      border-radius: 4px; margin: 1rem 0;
+      font-size: 0.9rem; color: var(--text-muted);
+    }
+    .delivery-info strong { color: var(--accent); }
+    .cart-summary {
+      padding: 1rem 0; text-align: right; font-size: 0.95rem;
+      color: var(--text-muted); line-height: 1.9;
+      border-top: 1px solid var(--card-border); margin-top: 0.5rem;
+    }
+    .cart-summary .total-line {
+      font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* ── CART PRICE NOTICE ── */
+    .cart-price-notice {
+      background: rgba(212,130,10,0.08);
+      border: 1px solid rgba(212,130,10,0.25);
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 0.75rem 0;
+      line-height: 1.4;
+    }
+    .cart-price-notice strong { color: var(--accent); }
+
+    /* ORDER FORM */
+    .order-section { padding: 1.5rem 1.75rem; border-top: 1px solid var(--card-border); }
+    .order-section h3 {
+      font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 1rem; color: var(--text-muted);
+    }
+    .order-form { display: grid; gap: 0.75rem; }
+    .order-form input,
+    .order-form textarea,
+    .order-form select {
+      padding: 0.85rem 1rem;
+      background: var(--bg2); border: 1px solid var(--card-border);
+      border-radius: 4px; color: var(--text);
+      font-size: 0.95rem; font-family: 'IBM Plex Sans', sans-serif;
+      outline: none; transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .order-form input:focus,
+    .order-form textarea:focus,
+    .order-form select:focus { border-color: var(--accent); }
+    .order-form select option { background: var(--bg2); }
+    .order-form textarea { resize: vertical; min-height: 80px; }
+    .address-row { display: flex; gap: 0.5rem; }
+    .address-row input { flex: 1; }
+    .map-btn {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      color: var(--text-muted); padding: 0 1rem; border-radius: 4px;
+      cursor: pointer; font-size: 0.85rem; white-space: nowrap;
+      transition: all 0.2s; font-family: 'IBM Plex Sans', sans-serif;
+    }
+    .map-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .submit-btn {
+      background: var(--accent); color: #fff; border: none;
+      padding: 1rem; border-radius: 4px; cursor: pointer;
+      font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .submit-btn:hover { background: var(--accent2); }
+    .submit-btn:active { transform: scale(0.98); }
+    .close-cart-btn {
+      background: transparent; border: 1px solid var(--card-border);
+      color: var(--text-muted); padding: 0.75rem; border-radius: 4px;
+      cursor: pointer; font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: all 0.2s;
+    }
+    .close-cart-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* SUCCESS / MAP MODALS */
+    #order-success-modal, #map-modal, #payment-success-modal {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center;
+      z-index: 300; padding: 1rem;
+    }
+    .success-content {
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      border-radius: 8px; padding: 2.5rem; max-width: 480px; width: 100%;
+      text-align: center;
+    }
+    .success-content h2 {
+      font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; color: var(--accent);
+    }
+    .success-content p { color: var(--text-muted); line-height: 1.6; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .tg-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.9rem 2rem; background: #229ED9; color: white;
+      border-radius: 4px; text-decoration: none;
+      font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin: 1rem 0; transition: opacity 0.2s;
+    }
+    .tg-link:hover { opacity: 0.85; }
+    .modal-close-btn {
+      padding: 0.7rem 1.5rem; background: transparent;
+      border: 1px solid var(--card-border); border-radius: 4px;
+      color: var(--text-muted); cursor: pointer;
+      font-family: 'Oswald', sans-serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; text-transform: uppercase; transition: all 0.2s;
+    }
+    .modal-close-btn:hover { border-color: var(--accent); color: var(--accent); }
+    #map-container { width: 90%; height: 80vh; background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--card-border); }
+    #map { width: 100%; height: 100%; }
+
+    /* ───── RESPONSIVE ───── */
+    @media (max-width: 768px) {
+      .mobile-cart-btn { display: flex; }
+      .cart-btn .cart-label { display: none; }
+      .hero { min-height: 400px; }
+      .products { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .product-img-wrap { height: 200px; }
+    }
+    @media (max-width: 480px) {
+      .products { grid-template-columns: 1fr; }
+      .product-img-wrap { height: 240px; }
+      .hero-badges { display: none; }
+    }
+
+    /* ───── ANIMATIONS ───── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-content { animation: fadeUp 0.6s ease both; }
+    .hero-eyebrow { animation: fadeUp 0.5s 0.1s ease both; }
+    .hero h1 { animation: fadeUp 0.5s 0.2s ease both; }
+    .hero-badges { animation: fadeUp 0.5s 0.35s ease both; }
+  </style>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=2eabc960-bce3-4302-949c-2850871ae7f6&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      Мясорубка
+      <span>Самара · Доставка деликатесов</span>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle">☀️</button>
+      <button class="cart-btn" onclick="openCart()">
+        <span class="cart-label">Корзина</span>
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Натуральное копчение · Самара</div>
+    <h1>Мясные деликатесы<br>ручной работы</h1>
+    <div class="hero-badges">
+      <span class="hero-badge">🔥 Горячее копчение</span>
+      <span class="hero-badge">⏱ Доставка по предвор</span>
+      <span class="hero-badge">📦 Минимальный заказ 1000 ₽</span>
+      <span class="hero-badge">🚗 Бесплатно от 5000 ₽</span>
+    </div>
+  </div>
+</section>
+
+<!-- КАК ЗАКАЗАТЬ -->
+<div class="how-strip">
+  <div class="how-inner">
+    <div class="how-step">
+      <div class="how-icon">🛒</div>
+      <div class="how-label">1. Выберите</div>
+      <div class="how-desc">Добавьте понравившиеся позиции в корзину</div>
+    </div>
+    <div class="how-arrow">→</div>
+    <div class="how-step">
+      <div class="how-icon">📝</div>
+      <div class="how-label">2. Оформите</div>
+      <div class="how-desc">Введите имя, телефон и адрес доставки</div>
+    </div>
+    <div class="how-arrow">→</div>
+    <div class="how-step">
+      <div class="how-icon">📞</div>
+      <div class="how-label">3. Подтвердите</div>
+      <div class="how-desc">Мы перезвоним и уточним точную стоимость после взвешивания</div>
+    </div>
+    <div class="how-arrow">→</div>
+    <div class="how-step">
+      <div class="how-icon">🚀</div>
+      <div class="how-label">4. Получите</div>
+      <div class="how-desc">Горячий деликатес привезёт курьер</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- УВЕДОМЛЕНИЕ О ЦЕНЕ -->
+  <div class="price-notice">
+    <div class="price-notice-icon">⚖️</div>
+    <div class="price-notice-text">
+      <strong>Обратите внимание:</strong> цены на сайте указаны примерно за единицу товара. Точная стоимость каждого изделия будет известна после приготовления и взвешивания — мы сообщим её при подтверждении заказа.
+    </div>
+  </div>
+
+  <!-- ФИЛЬТР ПО КАТЕГОРИЯМ -->
+  <div class="category-tabs" id="catTabs">
+    <button class="cat-tab active" data-cat="all">Все</button>
+    <button class="cat-tab" data-cat="hit">🔥 Хиты продаж</button>
+    <button class="cat-tab" data-cat="new">🌟 Новинки</button>
+    <button class="cat-tab" data-cat="gift">🎁 Подарочные боксы</button>
+    <button class="cat-tab" data-cat="cut">🔪 Нарезки</button>
+  </div>
+
+  <!-- ХИТЫ ПРОДАЖ -->
+  <div class="cat-section" data-section="hit">
+    <div class="section-header">
+      <h2 class="section-title">Хиты продаж</h2>
+      <span class="section-badge badge-hit">Топ</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="products" id="products-hit"></div>
+  </div>
+
+  <!-- НОВИНКИ -->
+  <div class="cat-section" data-section="new">
+    <div class="section-header">
+      <h2 class="section-title">Новинки</h2>
+      <span class="section-badge badge-new">New</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="products" id="products-new"></div>
+  </div>
+
+  <!-- ПОДАРОЧНЫЕ БОКСЫ -->
+  <div class="cat-section" data-section="gift">
+    <div class="section-header">
+      <h2 class="section-title">Подарочные боксы</h2>
+      <span class="section-badge badge-gift">Gift</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="products" id="products-gift"></div>
+  </div>
+
+  <!-- НАРЕЗКИ -->
+  <div class="cat-section" data-section="cut">
+    <div class="section-header">
+      <h2 class="section-title">Нарезки</h2>
+      <span class="section-badge badge-cut">★</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="products" id="products-cut"></div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Мясорубка</div>
+    <div class="footer-text">Натуральные мясные деликатесы в Самаре</div>
+    <a class="footer-tg" href="https://t.me/myasorubka63" target="_blank">
+      ✈ @myasorubka63
+    </a>
+  </div>
+</footer>
+
+<button class="mobile-cart-btn" onclick="openCart()">🛒</button>
+<button id="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- CART MODAL -->
+<div id="cart-modal">
+  <div class="cart-content">
+    <div class="cart-header">
+      <h2>Ваша корзина</h2>
+      <button class="close-btn" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-body">
+      <div id="cartItems"></div>
+      <div class="cart-price-notice">
+        ⚖️ <strong>Точная стоимость</strong> изделий будет уточнена после приготовления и взвешивания. Мы позвоним перед доставкой.
+      </div>
+      <div class="delivery-info" id="deliveryInfo"></div>
+      <div class="cart-summary">
+        Сумма товаров (примерно): <span id="goodsSum">0 ₽</span><br>
+        Доставка: <span id="deliverySum">150 ₽</span><br>
+        <span class="total-line">Итого (примерно): <span id="cartTotal">0 ₽</span></span>
+      </div>
+    </div>
+
+    <div class="order-section">
+      <h3>Оформить заказ</h3>
+      <form class="order-form" id="orderForm">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="tel" id="phone-input" placeholder="Телефон" required>
+        <div class="address-row">
+          <input type="text" id="address-input" placeholder="Адрес доставки" required>
+          <button type="button" class="map-btn" onclick="openMap()">📍 Карта</button>
+        </div>
+        <textarea placeholder="Комментарий к заказу (опционально)" rows="2"></textarea>
+        <select id="paymentSelect" required>
+          <option value="" disabled selected>Способ оплаты</option>
+          <option value="cash">Наличными курьеру</option>
+          <option value="online">Онлайн</option>
+        </select>
+        <button type="submit" class="submit-btn">Оформить заказ</button>
+        <button type="button" class="close-cart-btn" onclick="closeCart()">Закрыть</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div id="order-success-modal">
+  <div class="success-content">
+    <h2>Заказ №<span id="success-number"></span> принят!</h2>
+    <p>Мы получили ваш заказ и свяжемся с вами для подтверждения точной стоимости.</p>
+    <p>Для ускорения — напишите нам в Telegram:</p>
+    <a href="" id="tg-link" target="_blank" class="tg-link">
+      Написать в Telegram @myasorubka63
+    </a>
+    <br>
+    <button class="modal-close-btn" onclick="document.getElementById('order-success-modal').style.display='none'; clearCartAfterOrder();">Закрыть</button>
+  </div>
+</div>
+
+<!-- MAP MODAL -->
+<div id="map-modal">
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
+</div>
+
+<!-- PAYMENT SUCCESS MODAL -->
+<div id="payment-success-modal">
+  <div class="success-content">
+    <h2>Заказ успешно оплачен!</h2>
+    <p>Спасибо за покупку! Мы свяжемся с вами в ближайшее время.</p>
+    <button class="submit-btn" style="max-width:200px;margin:1rem auto 0;" onclick="document.getElementById('payment-success-modal').style.display='none'; clearCartAfterOrder();">Закрыть</button>
+  </div>
+</div>
+
+<form id="autoYooForm" method="POST" action="https://yoomoney.ru/quickpay/confirm" target="_blank" style="display:none;">
+  <input type="hidden" name="receiver" value="4100119441681698">
+  <input type="hidden" name="quickpay-form" value="shop">
+  <input type="hidden" name="targets" value="Оплата заказа мясных деликатесов">
+  <input type="hidden" name="sum" id="yooSum" value="">
+  <input type="hidden" name="label" value="Заказ с сайта Мясорубка">
+  <input type="hidden" name="successURL" value="https://твой-сайт.vercel.app/?paid=true">
+  <input type="hidden" name="paymentType" id="yooPaymentType" value="AC">
+</form>
+
+<script>
+  // ─── ТОВАРЫ ПО КАТЕГОРИЯМ ───────────────────────────────────────────────────
+
+  const products = {
+    hit: [
+      { id:1, name:"Шейка свиная пряная", weight:"Продаётся поштучно, 1 шт. (~400–500 г)", desc:"Сочная, ароматная шейка с правильным балансом специй", price:138, img:"https://sun9-33.userapi.com/s/v1/ig2/MMK9uOSsh6jW0SohrdBk2MFL2pwAp0EZATorWtM3BX7tfRXtahZuUJ2r1YbOdHTyw7aiEU9sAja768JTw5EuP5Lp.jpg?quality=95&as=32x38,48x57,72x85,108x127,160x189,240x283,360x424,480x566,540x637,640x755,720x849,1080x1274,1280x1509,1440x1698,2171x2560&from=bu&u=RMz9IMcvUfbVN442_tFhs9BFbAxP5Ud2XOmyeyQz8W8&cs=540x0" },
+      { id:2, name:"Ножка цыплёнка копчёная", weight:"Продаётся поштучно, 1 шт. (~200–400 г)", desc:"Самая вкусная и сочная часть тушки", price:89, img:"https://sun9-52.userapi.com/s/v1/ig2/KCyZy7EsKS7VSlaxEawOYiQRNpGk4Oh4e_fXcr-jTtQ6izOWexmIYe1YslFGRMDNWBs3Jr7iICY7BnI3zUNEs6qw.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=awMYMiivqgavq_IResOgRNzj1n7gxzd5NGqI01xX3p0&cs=540x0" },
+      { id:3, name:"Перепел целый копчёный", weight:"Цена за 1 шт", desc:"Готовая копчёная птица премиум-класса", price:350, img:"https://sun9-47.userapi.com/s/v1/ig2/QkocCq-Xz8AioCnGUwymW69xcG0RiecmxchIblpd_oWfvmaBYmU6Yz2wos0R4CsI8j-61xHsksC6kDMb4chvouIy.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,2560x1920&from=bu&u=68pEt5VqOsGeJ5vctwRVMTEDydPA4f7sOJLLEfUofIU&cs=1080x0" },
+      { id:4, name:"Орех из индейки с клюквой", weight:"Продаётся поштучно, 1 шт. (~400–500 г)", desc:"Нежное бедро индейки с вяленой клюквой", price:145, img:"https://sun9-42.userapi.com/s/v1/ig2/CP2_vP7XKT3fvKSh56rTrG-hKf6a4O7c6FuJyYJO7S-pmvt3qkw6DP2zhTet6oXjjxboGT0sUg978_Bs8Tqv4e-c.jpg?quality=95&as=32x45,48x68,72x102,108x153,160x227,240x341,360x511,480x682,540x767,640x909,720x1022,1080x1533,1280x1817,1440x2045,1803x2560&from=bu&u=PvmwbWztinE0Pqc_tag79q_owU2K7pZlPWyLwAJpzPw&cs=540x0" },
+      { id:5, name:"Дуэт в беконе", weight:"Продаётся поштучно, 1 шт. (~400–500 г)", desc:"Свиная вырезка + куриное филе в хрустящем беконе", price:135, img:"https://sun9-80.userapi.com/s/v1/ig2/C_c0FYAF4uhKcNEg1Ya5K1bChVbz3Pwaaztjr3EyDmbAjb3a7w_YXC2VT4bj6KklBVDr3pz2Nd_D71Y6IxtT1-Bu.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=U8JGKfalq3vQl3J3Dm7IbLrnknYBVS32gFnBsMc8mzk&cs=540x0" },
+      { id:6, name:"Рулет Панчетта", weight:"Продаётся поштучно, 1 шт. (~400–500 г)", desc:"Итальянский бекон из свиной грудинки", price:105, img:"https://sun9-78.userapi.com/s/v1/ig2/ZxX1qh16D0EsfV0CHPHjOaArr0fXfsaWRciRNOm9s72zxp02tAQOIn5IDOy2F0nkPwn0WuQuDtjHVZsj9TM27HmM.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=EicW6j8guDdoWYjx_sIqEBeqAKT5BDXePq5iHoYmXBw&cs=540x0" },
+      { id:9, name:"Джерки", weight:"Продаётся поштучно, 1 шт. (~100 г)", desc:"Джерки из свинины — одна из лучших закусок в мире", price:300, img:"https://sun9-6.userapi.com/s/v1/ig2/xj8JtnKcUrpTbfb0zh3yb1ude5AGy7yKTJK0Rzjft_RCwsx_UIYoEEkCOEabaUzWeG06ioubg79dEOdnH1uoZwBB.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=ShA4DhVJoWkIej-02SLyIPahDJRwflhWzsvlsLjR0A0&cs=540x0" },
+      { id:10, name:"Пивчики", weight:"Продаётся поштучно, 1 шт. (~100 г)", desc:"Подкопчёные пивчики — вкусная закуска для любого случая", price:200, img:"https://sun9-76.userapi.com/s/v1/ig2/TvfhWOYT0RacWgoUbAB4NvnrP4rkm1ZsoQ7cFvfpmUVPzmFR77__lrLu9xrqBi3JnacjylPD9cS7k-OOJRyB-LF1.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=VkMK1WqHqhMIxsk3UdOqRfm_VJp_o57QeeY6XITpAYs&cs=540x0" },
+      { id:11, name:"Говяжий язык варено-копченый", weight:"Продаётся поштучно, 1 шт. (~1 кг)", desc:"Говяжий язык — нежный, праздничный деликатес для вашего стола.", price:2600, img:"https://sun9-50.userapi.com/s/v1/ig2/7XQVxGZPzjfFoDmqi1hfvp9l2Y9JIVFx1VjPY7LjVfUM6VwT3BkLGyP-o3Qc5m8fHR5-FysQ0lbTFf8JAusbO-MN.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480&from=bu&u=wWe4BAEm8d23HXsEMNRHUDpS16HIKHVhrqxFCZgFqxQ" },
+      { id:12, name:"Паштет из печени индейки", weight:"Продаётся поштучно, 1 шт. (~160 г)", desc:"Нежный, кремовый, тающий во рту. Идеальное начало дня или уютный перекус. Без лишнего, только натуральный вкус.", price:400, img:"https://sun9-3.userapi.com/s/v1/ig2/eZffHSn_1FULHUakpDm-_680P6I3TMlNqOpOSAS2bT0Du87_LMByeeFopM-mnYUcd8cMtTUXiK_XRRA1d0Z558az.jpg?quality=95&as=32x33,48x49,72x74,108x110,160x164,240x246,360x368,480x491,540x553,640x655,720x737,1080x1105,1251x1280&from=bu&u=BBFekzL5BE_w1bgepEEt_H1aMkd4Af8kz6bnJ4i0gCY&cs=540x0" },
+      { id:13, name:"Пивчики Том Ям", weight:"Продаётся поштучно, 1 шт. (~100 г)", desc:"Знакомый всем взрывной вкус Том Ям теперь в наших пивчиках! 🌶", price:200, img:"https://sun9-5.userapi.com/s/v1/ig2/dyQ4U28NkSRQfuyb2JT-GXYTVb3XL_eJzsxVZX0F-veSrxmjS5pKJzxK7oqlPyPEYV2ZfD4MOi0NlX6-PMWjuuqT.jpg?quality=95&as=32x34,48x52,72x77,108x116,160x172,240x258,360x387,480x516,540x581,640x688,720x774,1080x1162,1190x1280&from=bu&u=vL5CEvc_Dk9XvjJAqaxr1jXb_5Ogv1zWDRf312EPNhs&cs=540x0" },
+      { id:14, name:"Джерки «Гранат-чили»", weight:"Продаётся поштучно, 1 шт. (~100 г)", desc:"Состав: куриная грудка, соль, гранатовые специи, перец Чили свежий Цена : 250₽ за 1шт(100г)", price:250, img:"https://sun9-36.userapi.com/s/v1/ig2/jtNYQpS4Y3LLHASDZ2ZgD2YUd-b5MbwemtLVLWueN4IDNC_oebwmzFGGDn4fCoteSfUJGilc2K71hcB8YDERU3OS.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,960x1280&from=bu&u=5uPeeDygZUm3KePUcQPyCKQCFtLMTW71e_HcJTUuRhM&cs=540x0" },
+    ],
+    new: [
+      { id:7, name:"Куриная грудка сырокопчёная", weight:"Продаётся поштучно, 1 шт. (~от 200 г)", desc:"Яркий сочный вкус и аппетитный аромат пряностей и копчения", price:120, img:"https://sun9-21.userapi.com/s/v1/ig2/XhN8JnwC5CpMbU5Mma19YbXTRYV1WlG7odAO_qpU9phTDGjaUg-kx5fwCxopIEwhsyZfqi6VLvnuvaqL2k_xEXkp.jpg?quality=95&as=32x45,48x68,72x102,108x153,160x226,240x339,360x509,480x679,540x764,640x905,720x1018,1080x1528,1280x1810,1440x2037,1810x2560&from=bu&u=hPmM8-mltV5YRLA6igmsJGoXLFeefocvEb8PuikeWtE&cs=540x0" },
+      { id:8, name:"Вырезка свиная варено-копчёная", weight:"Продаётся поштучно, 1 шт. (~400–500 г)", desc:"Нежная вырезка с чесноком, имбирём и ароматными специями", price:106, img:"https://sun9-54.userapi.com/s/v1/ig2/fEiWk-OrclsKLmQ1eGXk4nqLlb8WLEpsJ36jslwQ5XFqo8-xUp0vefeq8aICh4PaD-FeUXovQ7UMS_EbgicxLTnN.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=tVWa9Mb7wi3P_nlAqawxcjl319-2Wsb36tKzbPOb-S8&cs=540x0" },
+      { id:11, name:"Грудинка варено-копчёная", weight:"Продаётся поштучно, 1 шт. (~400–500 г)", desc:"Классическая закуска, приготовленная варкой и копчением", price:98, img:"https://sun9-81.userapi.com/s/v1/ig2/jxQ7YaJJgHKQ8ds6ICzXHVxmZydCeavGnaPc4-9CGz1tXrND-M61mbi4u8MzqTxs1Mrb93lS14hYSqgjfNOY2KmA.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1280x1707,1440x1920,1920x2560&from=bu&u=FZMnHHe0q2WecBXk8rIamFFfW6owFO8VTJxGwafH5mI&cs=540x0" },
+      { id:12, name:"Рёбра свиные", weight:"Продаётся поштучно, 1 шт. (~300–500 г)", desc:"Горячее копчение, ароматное и сочное мясо на кости", price:98, img:"https://sun9-68.userapi.com/s/v1/ig2/yOIOF-NMPwXtKlTBwDgQKYW6-WYM-gZvzBNGwGCby9QQLJQzfVLOwZ8DBPMLzji3rlM1VgCyoRODZRXaVkIbl6eM.jpg?quality=95&as=32x42,48x63,72x95,108x143,160x212,240x317,360x476,480x635,540x714,640x846,720x952,1080x1428,1280x1693,1440x1904,1936x2560&from=bu&u=XoBCHQnsjvExcVTFGXccNtPT8LMf0ltljyYvJfST5-U&cs=540x0" },
+      { id:13, name:"Краковская колбаса", weight:"Продаётся поштучно, 1 шт. (~400–500 г)", desc:"Отборная свинина и высококачественная говядина", price:122, img:"https://sun9-55.userapi.com/s/v1/ig2/yN8sa5dqPdXeMzCl_7WE1kUFA5w-Jxp-PQsJV3OWLyHfmslofI007_R87qbCj-tgaaLCrkQADj0PNLwo9-3745Ah.jpg?quality=95&as=32x36,48x54,72x81,108x121,160x179,240x269,360x403,480x538,540x605,640x717,720x806,1080x1209,1280x1433,1440x1613,2286x2560&from=bu&u=ZWZwlsROrfhlmcz7FW-xQzK6lmgkkgs1fYlvJbpx0ro&cs=540x0" },
+    ],
+    gift: [
+      { id:101, name:"Бокс «Мясной стандарт»", weight:"~1,5–2 кг · Примерно 5–6 позиций", desc:"Шейка, рулет, джерки, рёбрышки, грудинка — всё самое вкусное в одном боксе. Идеально для праздничного стола.", price:800, img:"https://sun9-33.userapi.com/s/v1/ig2/MMK9uOSsh6jW0SohrdBk2MFL2pwAp0EZATorWtM3BX7tfRXtahZuUJ2r1YbOdHTyw7aiEU9sAja768JTw5EuP5Lp.jpg?quality=95&from=bu&u=RMz9IMcvUfbVN442_tFhs9BFbAxP5Ud2XOmyeyQz8W8&cs=540x0" },
+      { id:102, name:"Бокс «Премиум»", weight:"~2,5–3 кг · Примерно 7–8 позиций", desc:"Перепел, орех из индейки, краковская, дуэт в беконе и другие деликатесы. Лучший подарок для настоящего ценителя.", price:1400, img:"https://sun9-47.userapi.com/s/v1/ig2/QkocCq-Xz8AioCnGUwymW69xcG0RiecmxchIblpd_oWfvmaBYmU6Yz2wos0R4CsI8j-61xHsksC6kDMb4chvouIy.jpg?quality=95&from=bu&u=68pEt5VqOsGeJ5vctwRVMTEDydPA4f7sOJLLEfUofIU&cs=1080x0" },
+      { id:103, name:"Бокс «Пивной»", weight:"~1 кг · Пивные снеки и закуски", desc:"Пивчики, джерки, рёбра — идеальный набор для вечера с друзьями. Упаковано в подарочную крафт-коробку.", price:700, img:"https://sun9-6.userapi.com/s/v1/ig2/xj8JtnKcUrpTbfb0zh3yb1ude5AGy7yKTJK0Rzjft_RCwsx_UIYoEEkCOEabaUzWeG06ioubg79dEOdnH1uoZwBB.jpg?quality=95&from=bu&u=ShA4DhVJoWkIej-02SLyIPahDJRwflhWzsvlsLjR0A0&cs=540x0" },
+      { id:104, name:"Бокс «Сборный» (на выбор)", weight:"Состав — по вашему желанию", desc:"Сами выбираете позиции, мы красиво упакуем. Уточните состав в комментарии к заказу.", price:500, img:"https://sun9-80.userapi.com/s/v1/ig2/C_c0FYAF4uhKcNEg1Ya5K1bChVbz3Pwaaztjr3EyDmbAjb3a7w_YXC2VT4bj6KklBVDr3pz2Nd_D71Y6IxtT1-Bu.jpg?quality=95&from=bu&u=U8JGKfalq3vQl3J3Dm7IbLrnknYBVS32gFnBsMc8mzk&cs=540x0" },
+    ],
+    cut: [
+      { id:201, name:"Ассорти деликатесов", weight:"~200 г · Ассорти 3–4 вида", desc:"Теперь не нужно выбирать. В одной упаковке - лучшие вкусы:", price:230, img:"https://sun9-30.userapi.com/s/v1/ig2/XNo2nB31zI2NPfrAV-xegEjLlRUxbOIDBew8B8aqySuWsU8jNOVCPO1yGoapYjFUkuEZXEFvVtxRubi1ySNIJjyb.jpg?quality=95&as=32x37,48x56,72x84,108x125,160x186,240x279,360x418,480x558,540x627,640x743,720x836,1080x1254,1280x1487,1440x1673,2204x2560&from=bu&u=mSjCsIzv1_A7ZeDSK1iYSxQAuk6qd35K5TNy0s5KsK4&cs=540x0" },
+      
+    ]
+  };
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const MIN_ORDER = 1000;
+  const FREE_DELIVERY_FROM = 5555;
+  const DELIVERY_COST = 150;
+  const BOT_TOKEN = '7857746746:AAGppBRxVA72xVEhXmvPYsWxoV3fDpvKdZY';
+  const ADMIN_CHAT_ID = '7900316924';
+
+  // ─── THEME ───────────────────────────────────────────────────────────────────
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+
+  // ─── SCROLL TO TOP ────────────────────────────────────────────────────────────
+  window.addEventListener('scroll', () => {
+    document.getElementById('to-top').style.display = window.scrollY > 400 ? 'flex' : 'none';
+  });
+
+  // ─── RENDER PRODUCTS ─────────────────────────────────────────────────────────
+  function createCard(p, ribbonType) {
+    const ribbonMap = {
+      hit:  { cls: 'ribbon-hit',  label: 'Хит' },
+      new:  { cls: 'ribbon-new',  label: 'Новинка' },
+      gift: { cls: 'ribbon-gift', label: 'Подарок' },
+      cut:  { cls: 'ribbon-cut',  label: 'Нарезка' },
+    };
+    const r = ribbonMap[ribbonType];
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+      <div class="ribbon ${r.cls}">${r.label}</div>
+      <div class="product-img-wrap">
+        <img class="product-img" src="${p.img}" alt="${p.name}" loading="lazy">
+        <div class="product-img-overlay"></div>
+      </div>
+      <div class="product-info">
+        <h3>${p.name}</h3>
+        <div class="weight">${p.weight}</div>
+        <div class="description">${p.desc}</div>
+        <div class="product-bottom">
+          <div class="price-wrap">
+            <div class="price">от ${p.price} ₽</div>
+            <div class="price-note">точная цена — после приготовления</div>
+          </div>
+          <div class="quantity-block">
+            <button class="quantity-btn" type="button">−</button>
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="quantity-btn" type="button">+</button>
+          </div>
+          <button class="btn-add" type="button">В корзину</button>
+        </div>
+      </div>
+    `;
+
+    const [minusBtn, plusBtn] = card.querySelectorAll('.quantity-btn');
+    const input = card.querySelector('.quantity-input');
+    const addBtn = card.querySelector('.btn-add');
+
+    minusBtn.addEventListener('click', () => { if (input.value > 1) input.value--; });
+    plusBtn.addEventListener('click', () => { input.value = parseInt(input.value) + 1; });
+    addBtn.addEventListener('click', () => {
+      const qty = parseInt(input.value) || 1;
+      const existing = cart.find(item => item.id === p.id);
+      if (existing) existing.quantity += qty;
+      else cart.push({ ...p, quantity: qty });
+      saveCart(); updateCartCount();
+      if (document.getElementById('cart-modal').style.display === 'flex') renderCart();
+      addBtn.textContent = '✓ Добавлено';
+      addBtn.style.background = '#2a7a3a';
+      setTimeout(() => { addBtn.textContent = 'В корзину'; addBtn.style.background = ''; }, 1500);
+    });
+    return card;
+  }
+
+  function renderProducts() {
+    Object.keys(products).forEach(cat => {
+      const container = document.getElementById('products-' + cat);
+      container.innerHTML = '';
+      products[cat].forEach(p => container.appendChild(createCard(p, cat)));
+    });
+  }
+
+  // ─── CATEGORY TABS ───────────────────────────────────────────────────────────
+  document.getElementById('catTabs').addEventListener('click', e => {
+    const tab = e.target.closest('.cat-tab');
+    if (!tab) return;
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const cat = tab.dataset.cat;
+    document.querySelectorAll('.cat-section').forEach(section => {
+      if (cat === 'all' || section.dataset.section === cat) {
+        section.classList.remove('hidden');
+      } else {
+        section.classList.add('hidden');
+      }
+    });
+  });
+
+  // ─── CART ─────────────────────────────────────────────────────────────────────
+  function saveCart() { localStorage.setItem('cart', JSON.stringify(cart)); }
+
+  function updateCartCount() {
+    const count = cart.reduce((s, i) => s + i.quantity, 0);
+    document.getElementById('cartCount').textContent = count;
+  }
+
+  function renderCart() {
+    const container = document.getElementById('cartItems');
+    container.innerHTML = '';
+    let totalGoods = 0;
+
+    if (cart.length === 0) {
+      container.innerHTML = '<p style="text-align:center;padding:3rem;color:var(--text-muted);">Корзина пуста</p>';
+      document.getElementById('goodsSum').textContent = '0 ₽';
+      document.getElementById('deliverySum').textContent = '0 ₽';
+      document.getElementById('cartTotal').textContent = '0 ₽';
+      document.getElementById('deliveryInfo').innerHTML = '';
+      return;
+    }
+
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      totalGoods += itemTotal;
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <div class="cart-item-info">
+          <strong>${item.name}</strong>
+          <div class="cart-item-meta">от ${item.price} ₽ × ${item.quantity} = от ${itemTotal} ₽</div>
+        </div>
+        <div class="quantity-controls">
+          <button class="qty-ctrl-btn" onclick="changeQuantity(${item.id}, -1)">−</button>
+          <span>${item.quantity}</span>
+          <button class="qty-ctrl-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
+          <button class="remove-btn" onclick="removeFromCart(${item.id})">Удалить</button>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+
+    const deliveryCost = totalGoods >= FREE_DELIVERY_FROM ? 0 : DELIVERY_COST;
+    const grandTotal = totalGoods + deliveryCost;
+
+    document.getElementById('goodsSum').textContent = 'от ' + totalGoods + ' ₽';
+    document.getElementById('deliverySum').textContent = deliveryCost === 0 ? 'бесплатно' : deliveryCost + ' ₽';
+    document.getElementById('cartTotal').textContent = 'от ' + grandTotal + ' ₽';
+    document.getElementById('deliveryInfo').innerHTML = deliveryCost === 0
+      ? '<strong>🎉 Доставка бесплатно!</strong>'
+      : `Доставка: ${DELIVERY_COST} ₽ (бесплатно от ${FREE_DELIVERY_FROM} ₽)`;
+  }
+
+  function changeQuantity(id, delta) {
+    const item = cart.find(i => i.id === id);
+    if (item) {
+      item.quantity += delta;
+      if (item.quantity <= 0) removeFromCart(id);
+      else { saveCart(); updateCartCount(); renderCart(); }
+    }
+  }
+
+  function removeFromCart(id) {
+    cart = cart.filter(i => i.id !== id);
+    saveCart(); updateCartCount(); renderCart();
+  }
+
+  function openCart() {
+    renderCart();
+    document.getElementById('cart-modal').style.display = 'flex';
+  }
+  function closeCart() {
+    document.getElementById('cart-modal').style.display = 'none';
+  }
+
+  // ─── PHONE MASK ───────────────────────────────────────────────────────────────
+  document.getElementById('phone-input').addEventListener('input', function(e) {
+    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+    if (!x[2] && x[1] !== '7') x[1] = '7';
+    e.target.value = !x[2] ? '+7' : '+7 (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+  });
+
+  // ─── MAP ──────────────────────────────────────────────────────────────────────
+  let ymap;
+  function openMap() {
+    document.getElementById('map-modal').style.display = 'flex';
+    if (!ymap) {
+      ymaps.ready(() => {
+        ymap = new ymaps.Map("map", { center: [53.2007, 50.1478], zoom: 12 });
+        ymap.events.add('click', e => {
+          const coords = e.get('coords');
+          ymaps.geocode(coords).then(res => {
+            const first = res.geoObjects.get(0);
+            if (first) {
+              document.getElementById('address-input').value = first.getAddressLine();
+              document.getElementById('map-modal').style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+  }
+  document.getElementById('map-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
+  });
+
+  // ─── ORDER SUBMIT ─────────────────────────────────────────────────────────────
+  document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const cleanedPhone = document.getElementById('phone-input').value.replace(/\D/g, '');
+    if (cleanedPhone.length !== 11) { alert('Введите корректный номер телефона (11 цифр)'); return; }
+
+    let totalGoods = 0;
+    cart.forEach(item => totalGoods += item.price * item.quantity);
+    if (totalGoods < MIN_ORDER) {
+      alert(`Минимальная сумма заказа — ${MIN_ORDER} ₽ (по товарам)\n\nСейчас: ~${totalGoods} ₽`);
+      return;
+    }
+
+    const deliveryCost = totalGoods >= FREE_DELIVERY_FROM ? 0 : DELIVERY_COST;
+    const total = totalGoods + deliveryCost;
+    const orderNumber = 'M' + Date.now().toString().slice(-6);
+
+    const orderData = {
+      number: orderNumber,
+      name: this[0].value,
+      phone: document.getElementById('phone-input').value,
+      address: document.getElementById('address-input').value,
+      comment: this[3].value || 'нет',
+      total: total,
+      payment: document.getElementById('paymentSelect').value
+    };
+
+    localStorage.setItem('lastOrder', JSON.stringify(orderData));
+    sendOrderToAdmin(orderData);
+
+    const tgMessage = `Заказ №${orderNumber}%0AИмя: ${orderData.name}%0AТелефон: ${orderData.phone}%0AАдрес: ${encodeURIComponent(orderData.address)}%0AКомментарий: ${orderData.comment}%0AСумма (примерно): ${total} ₽`;
+    document.getElementById('success-number').textContent = orderNumber;
+    document.getElementById('tg-link').href = `https://t.me/myasorubka63?text=${tgMessage}`;
+    document.getElementById('order-success-modal').style.display = 'flex';
+
+    if (orderData.payment === 'online') {
+      document.getElementById('yooSum').value = total;
+      document.getElementById('autoYooForm').submit();
+    }
+    closeCart();
+  });
+
+  function sendOrderToAdmin(orderData) {
+    let text = `*Новый заказ №${orderData.number}*\n\n`;
+    text += `Имя: ${orderData.name}\nТелефон: ${orderData.phone}\nАдрес: ${orderData.address}\nКомментарий: ${orderData.comment}\n\n*Товары:*\n`;
+    cart.forEach(item => text += `• ${item.name} × ${item.quantity} = от ${item.price * item.quantity} ₽\n`);
+    text += `\nИтого (примерно): ${orderData.total} ₽\nОплата: ${orderData.payment === 'cash' ? 'наличными' : 'онлайн'}`;
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${ADMIN_CHAT_ID}&text=${encodeURIComponent(text)}&parse_mode=Markdown`);
+  }
+
+  function clearCartAfterOrder() {
+    cart = []; saveCart(); updateCartCount(); localStorage.removeItem('lastOrder');
+  }
+
+  // ─── INIT ─────────────────────────────────────────────────────────────────────
+  window.addEventListener('load', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('paid') === 'true') {
+      const saved = localStorage.getItem('lastOrder');
+      if (saved) {
+        const orderData = JSON.parse(saved);
+        sendOrderToAdmin({ ...orderData, payment: 'online' });
+        document.getElementById('payment-success-modal').style.display = 'flex';
+        clearCartAfterOrder();
+      }
+      history.replaceState({}, '', window.location.pathname);
+    }
+  });
+
+  renderProducts();
+  updateCartCount();
+</script>
+</body>
+</html>
